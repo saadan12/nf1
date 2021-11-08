@@ -1,0 +1,117 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Glimcy</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+<!--        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/logo.svg' %}">-->
+
+    <!-- Custom Stylesheet -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <div id="preloader"><i>.</i><i>.</i><i>.</i></div>
+
+    <div id="main-wrapper">
+
+        <!-- START OF HEADER -->
+        {% include 'partials/_header.html' %}
+        <!-- END OF HEADER -->
+
+        <!-- START OF SIDEBAR -->
+        {% include 'partials/_sidebar.html' %}
+        <!-- END OF SIDEBAR -->
+
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="page-title">
+                            <h4>{% trans 'Application' %}</h4>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                {% include 'partials/settings_menu.html' %}
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xxl-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title">{% trans 'Preferences' %}</h4>
+                                            </div>
+                                            <div class="card-body">
+                                                <form action="{% url 'update_preferences' %}" method="POST">{% csrf_token %}
+                                                    <div class="row g-3">
+                                                        <div class="col-sm-6">
+                                                            <label class="form-label">{% trans 'Language Default' %}</label>
+                                                            <select name="language" class="form-select">
+                                                                {% get_current_language as LANGUAGE_CODE %}
+                                                                {% get_available_languages as LANGUAGES %}
+                                                                {% get_language_info_list for LANGUAGES as languages %}
+                                                                {% for language in languages %}
+                                                                    <option value="{{ language.code }}_{{ language.name }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                                                        {{ language.name }}
+                                                                    </option>
+                                                                {% endfor %}
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <label class="form-label">{% trans 'Currency Default' %}</label>
+                                                            <select class="form-select" name="currency">
+                                                                <option value="USD" {% if user.default_currency == 'USD' %}selected{% endif %}>USD</option>
+                                                                <option value="EUR" {% if user.default_currency == 'EUR' %}selected{% endif %}>EUR</option>
+                                                                <option value="GBP" {% if user.default_currency == 'GBP' %}selected{% endif %}>GBP</option>
+                                                                <option value="RUB" {% if user.default_currency == 'RUB' %}selected{% endif %}>RUB</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                        {% load tz %}
+                                                        {% get_current_timezone as TIME_ZONE %}
+                                                            <label class="form-label">{% trans 'Time Zone' %}</label>
+                                                            <select name="timezone" class="form-select">
+                                                                {% for tz in timezones %}
+                                                                <option value="{{ tz }}"{% if tz == TIME_ZONE %} selected{% endif %}>{{ tz }}</option>
+                                                                {% endfor %}
+                                                            </select>
+                                                            <br>
+                                                        </div>
+                                                        <div class="col-12 pt-2">
+                                                                <button class="btn btn-success pl-5 pr-5 waves-effect" type="submit">{% trans 'Save' %}</button>
+                                                            </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

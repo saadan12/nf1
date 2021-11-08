@@ -1,0 +1,81 @@
+{% load static %}
+{% load i18n %}
+
+<footer class="footer-main bg-gradient-primary dark overlay-shape-06">
+    <div class="padding">
+      <div class="center margin-bottom max-width-m">
+        <h3>{% trans 'Trade assets professionally and effortlessly' %}.</h3>
+        <p class="paragraph">{% trans 'Our platform is packed with epic features. So you can focus on your most important work' %}.</p>
+      </div>
+      <div class="center margin-bottom max-width-l">
+        <div class="row margin-bottom min-two-columns">
+          <div class="col-one-fourth">
+            <i class="feature-icons material-icons bg-gradient-pink"></i>
+            <h6>{% trans 'Automated Analytics' %}</h6>
+          </div>
+          <div class="col-one-fourth">
+            <i class="feature-icons material-icons bg-gradient-cyan"></i>
+            <h6>{% trans 'AI powered' %}</h6>
+          </div>
+          <div class="col-one-fourth">
+            <i class="feature-icons material-icons bg-gradient-indigo"></i>
+            <h6>{% trans 'Continues development' %}</h6>
+          </div>
+          <div class="col-one-fourth">
+            <i class="feature-icons material-icons bg-gradient-indigo"></i>
+            <h6>{% trans 'Supportive Communit' %}</h6>
+          </div>
+        </div>
+      </div>
+      <div class="card card-content dark margin-bottom max-width-l">
+        <form class="row reduce-spacing">
+          <div class="col-two-thirds center-tablet middle">
+            <h3 class="space-none">{% trans 'Ready to get started' %}?</h3>
+            <p class="paragraph">{% trans 'Start your free 30-day trial today' %}.</p>
+          </div>
+          <div class="col-one-third middle">
+            <a href="{% url 'account_login' %}" class="button button-primary" role="button">{% trans 'Create An Account' %}</a>
+          </div>
+        </form>
+      </div>
+      <div class="row center-desktop max-width-l">
+        <div class="col-two-fifths">
+          <h6>Glimcy ®</h6>
+          <p>{% trans 'The best crypto-trading analytics platform' %}!</p>
+        </div>
+        <div class="col-one-fifth">
+          <h6>{% trans 'Info' %}</h6>
+          <ul class="blank">
+            <li><a href="#">{% trans 'Getting Started' %}</a></li>
+            <li><a href="{% url 'white_paper' %}">White Paper</a></li>
+            <li><a href="{% url 'faq' %}">FAQ</a></li>
+            <!-- <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Pricing</a></li> -->
+          </ul>
+        </div>
+        <!-- <div class="col-one-fifth">
+          <h6>Legal Information</h6>
+          <ul class="blank">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Terms of Referral</a></li>
+            <li><a href="#">Partner Agreement</a></li>
+            <li><a href="#">Bug Bounty</a></li>
+          </ul>
+        </div> -->
+        <div class="col-one-fifth">
+          <h6>{% trans 'Connect' %}</h6>
+          <ul class="blank">
+            <li><a href="https://twitter.com/glimcy_official">Twitter</a></li>
+            <li><a href="https://t.me/glimcy_breaking">Telegram</a></li>
+            <li><a href="https://www.facebook.com/Glimcy-107340144823641/">Facebook</a></li>
+            <li><a href="https://www.instagram.com/glimcy.app/">Instagram</a></li>
+            <li><a href="https://www.pinterest.co.uk/glimcy_official/">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="copyright"><span>Glimcy</span>
+      <a href="https://glimcy.com/" target="_blank">{% trans ' Crypto Analytics powered by AI' %}</a>
+      <span> - © 2021, {% trans 'all rights reserved' %}.</span></p>
+  </footer>

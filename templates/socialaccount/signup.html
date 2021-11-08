@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <!-- Custom Stylesheet -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div id="preloader"><i>.</i><i>.</i><i>.</i></div>
+    <div class="mt-5">
+        <div class="verification">
+            <div class="container h-100">
+                <div class="row justify-content-center h-100 align-items-center">
+                    <div class="col-xl-5 col-md-6">
+                        <div class="mini-logo text-center mb-4">
+                            <a href="{% url 'intro' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+                            <h4 class="card-title mt-3">Sign Up</h4>
+                        </div>
+                        <div class="auth-form card">
+                            <div class="card-body">
+                                {% load i18n %}
+                                <form class="identity-upload">
+                                    <div class="identity-content">
+                                        <span class="icon"><i class="icofont-email"></i></span>
+                                         <p>
+                                            {% with provider_name=account.get_provider.name site_name=site.name %}{% blocktrans %}You are about to use your {{provider_name}} account to login to
+                                            {{site_name}}. As a final step, please complete the following form:{% endblocktrans %}
+                                         </p>
+                                </form>
+                                      <form class="signup" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}">
+                                          {% csrf_token %}
+                                          {% if request.method == 'POST' %}
+                                          <p class="text-danger" style="margin-bottom:5px !important">Email Already in use</p>
+                                          {% endif %}
+                                          <input type="email" placeholder="Email" autofocus name="email" required class="form-control">
+                                          {% if redirect_field_value %}
+                                          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                                          {% endif %}
+                                           <button type="submit" class="btn btn-sm btn-primary mt-3">{% trans "Sign Up" %} &raquo;</button>
+                                      </form>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+    </script>
+</body>
+</html>
+

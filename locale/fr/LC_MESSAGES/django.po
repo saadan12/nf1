@@ -1,0 +1,1838 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-30 17:41+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\dashboard\settings.py:259
+msgid "English"
+msgstr ""
+
+#: .\dashboard\settings.py:260
+msgid "Russian"
+msgstr ""
+
+#: .\dashboard\settings.py:261
+msgid "Spanish"
+msgstr ""
+
+#: .\dashboard\settings.py:263
+msgid "Japanese"
+msgstr ""
+
+#: .\dashboard\settings.py:264
+msgid "Hindi"
+msgstr ""
+
+#: .\dashboard\settings.py:265
+msgid "French"
+msgstr ""
+
+#: .\dashboard\settings.py:266
+msgid "German"
+msgstr ""
+
+#: .\dashboard\settings.py:267
+msgid "Swedish"
+msgstr ""
+
+#: .\dashboard\views.py:130
+#, python-brace-format
+msgid "Futures Position {symbol}(size: {size}) was executed."
+msgstr ""
+
+#: .\dashboard\views.py:151
+msgid ""
+"Futures Order {item['symbol']}(Type: {type}) was executed. Original "
+"Quantity: {origQty}, Executed Quantity: {executedQty}"
+msgstr ""
+
+#: .\dashboard\views.py:332 .\home\views.py:1233
+msgid "Please add the api keys for your binance account"
+msgstr ""
+
+#: .\dashboard\views.py:455
+msgid "The API Keys are Added and encrypted successfully!."
+msgstr ""
+
+#: .\dashboard\views.py:465
+#, python-brace-format
+msgid "API Keys for {exchange} exchange Deleted Successfully!"
+msgstr ""
+
+#: .\home\templates\home\blank.html:38
+msgid "Portfolio"
+msgstr ""
+
+#: .\home\templates\home\cookies_policy.html:11
+#: .\home\templates\home\lock.html:11
+#: .\home\templates\home\price-details.html:11
+#: .\home\templates\home\price.html:11
+#: .\home\templates\home\privacy_policy.html:11
+#: .\home\templates\home\reset.html:11 .\home\templates\home\trade.html:11
+#: .\home\templates\home\verify-email.html:11
+#: .\home\templates\home\wallet.html:11
+#: .\templates\account\email_confirm.html:11
+#: .\templates\account\password_change.html:11
+#: .\templates\account\password_reset.html:11
+#: .\templates\account\password_reset_done.html:11
+#: .\templates\account\password_reset_from_key.html:11
+#: .\templates\account\password_reset_from_key_done.html:11
+#: .\templates\account\password_set.html:11
+#: .\templates\account\verification_sent.html:11
+#: .\templates\charting-library\chart.html:10
+#: .\templates\profile\settings-activity.html:11
+#: .\templates\profile\settings-api.html:11
+#: .\templates\profile\settings-fees.html:11
+#: .\templates\profile\settings-payment-method.html:11
+#: .\templates\profile\settings-privacy.html:11
+#: .\templates\profile\settings-profile.html:11
+#: .\templates\profile\settings-security.html:11
+#: .\templates\socialaccount\connections.html:11
+msgid "Crypto Exchange Dashboard UI Kit"
+msgstr ""
+
+#: .\home\templates\home\cookies_policy.html:36
+#: .\home\templates\home\privacy_policy.html:42
+msgid "Back To Privacy"
+msgstr ""
+
+#: .\home\templates\home\demo.html:35
+msgid "Support"
+msgstr ""
+
+#: .\home\templates\home\demo.html:47
+msgid "Qash - Crypto Exchange Dashboard UI Kit"
+msgstr ""
+
+#: .\home\templates\home\demo.html:48
+msgid ""
+"Qash is the complete UI Kit for cryptocurrency exchange. Sign in, Signup, "
+"Phone and ID card verification, One time password verify and add bank, debit "
+"card settings and profile etc pages included."
+msgstr ""
+
+#: .\home\templates\home\demo.html:51
+msgid "Buy"
+msgstr ""
+
+#: .\home\templates\home\demo.html:92
+msgid "Dashboard"
+msgstr ""
+
+#: .\home\templates\home\demo.html:102
+msgid "Trade"
+msgstr ""
+
+#: .\home\templates\home\demo.html:112
+msgid "Wallet"
+msgstr ""
+
+#: .\home\templates\home\reset.html:31
+#: .\templates\account\password_reset.html:31
+msgid "Reset Password"
+msgstr ""
+
+#: .\home\templates\home\reset.html:40 .\home\templates\home\wallet.html:72
+#: .\templates\account\password_reset.html:45
+msgid "Email"
+msgstr ""
+
+#: .\home\templates\home\reset.html:45
+#: .\templates\account\password_reset.html:50
+#: .\templates\profile\settings-payment-method.html:195
+msgid "Submit"
+msgstr ""
+
+#: .\home\templates\home\reset.html:49
+#: .\templates\account\password_reset.html:54
+msgid "Don't get code"
+msgstr ""
+
+#: .\home\templates\home\reset.html:49
+#: .\templates\account\password_reset.html:54
+msgid "Resend"
+msgstr ""
+
+#: .\home\templates\home\signin.html:19 .\templates\account\login.html:28
+#: .\templates\account\signup.html:24
+msgid "Create Account"
+msgstr ""
+
+#: .\home\templates\home\signin.html:33 .\home\templates\home\signin.html:71
+#: .\templates\account\login.html:47 .\templates\account\login.html:87
+#: .\templates\account\signup.html:43 .\templates\account\signup.html:77
+#: .\templates\socialaccount\signup.html:49
+msgid "Sign Up"
+msgstr ""
+
+#: .\home\templates\home\signin.html:57 .\templates\account\login.html:72
+#: .\templates\account\signup.html:63
+msgid "Forgot Password?"
+msgstr ""
+
+#: .\home\templates\home\signin.html:58 .\home\templates\home\signin.html:66
+#: .\templates\account\login.html:73 .\templates\account\login.html:81
+#: .\templates\account\signup.html:64 .\templates\account\signup.html:72
+msgid "Sign In"
+msgstr ""
+
+#: .\home\templates\home\signin.html:64 .\templates\account\login.html:79
+#: .\templates\account\signup.html:70
+msgid "Welcome Back"
+msgstr ""
+
+#: .\home\templates\home\signin.html:65 .\templates\account\login.html:80
+#: .\templates\account\signup.html:71
+msgid "To keep connected with us please login with your personal info"
+msgstr ""
+
+#: .\home\templates\home\signin.html:69 .\templates\account\login.html:84
+#: .\templates\account\signup.html:75
+msgid "Hello, Friend"
+msgstr ""
+
+#: .\home\templates\home\trade.html:71
+msgid "Positions"
+msgstr ""
+
+#: .\home\templates\home\trade.html:72
+msgid "Open Orders"
+msgstr ""
+
+#: .\home\templates\home\trade.html:80 .\home\templates\home\trade.html:118
+#: .\templates\charting-library\chart.html:98
+#: .\templates\partials\_container.html:244
+msgid "Symbol"
+msgstr ""
+
+#: .\home\templates\home\trade.html:81 .\templates\partials\_container.html:245
+msgid "Size"
+msgstr ""
+
+#: .\home\templates\home\trade.html:82
+msgid "Entry Price"
+msgstr ""
+
+#: .\home\templates\home\trade.html:83
+msgid "Mark Price"
+msgstr ""
+
+#: .\home\templates\home\trade.html:84
+msgid "Liq.Price"
+msgstr ""
+
+#: .\home\templates\home\trade.html:85
+msgid "Margin"
+msgstr ""
+
+#: .\home\templates\home\trade.html:86
+#, python-format
+msgid "PNL(ROE%%)"
+msgstr ""
+
+#: .\home\templates\home\trade.html:87
+msgid "tp/sl"
+msgstr ""
+
+#: .\home\templates\home\trade.html:117
+#: .\templates\charting-library\chart.html:97
+#: .\templates\partials\_container.html:277
+#: .\templates\partials\_container.html:340
+#: .\templates\partials\_container.html:430
+#: .\templates\partials\_container.html:522
+msgid "Date"
+msgstr ""
+
+#: .\home\templates\home\trade.html:119
+#: .\templates\charting-library\chart.html:99
+#: .\templates\partials\_container.html:278
+#: .\templates\partials\_container.html:338
+#: .\templates\partials\_container.html:428
+#: .\templates\partials\_container.html:520
+msgid "Type"
+msgstr ""
+
+#: .\home\templates\home\trade.html:120
+#: .\templates\charting-library\chart.html:100
+msgid "Side"
+msgstr ""
+
+#: .\home\templates\home\trade.html:121
+#: .\templates\charting-library\chart.html:101
+#: .\templates\partials\_container.html:246
+#: .\templates\partials\_container.html:247
+#: .\templates\partials\_container.html:281
+msgid "Price"
+msgstr ""
+
+#: .\home\templates\home\trade.html:122
+#: .\templates\charting-library\chart.html:102
+#: .\templates\partials\_container.html:280
+#: .\templates\partials\_container.html:339
+#: .\templates\partials\_container.html:429
+#: .\templates\partials\_container.html:521
+msgid "Amount"
+msgstr ""
+
+#: .\home\templates\home\trade.html:123
+#: .\templates\charting-library\chart.html:103
+msgid "Filled"
+msgstr ""
+
+#: .\home\templates\home\trade.html:143
+msgid "No orders"
+msgstr ""
+
+#: .\home\templates\home\trade.html:169
+msgid "Choose Interval"
+msgstr ""
+
+#: .\home\templates\home\trade.html:174
+msgid "1 minute"
+msgstr ""
+
+#: .\home\templates\home\trade.html:175
+msgid "3 minutes"
+msgstr ""
+
+#: .\home\templates\home\trade.html:176
+msgid "5 minutes"
+msgstr ""
+
+#: .\home\templates\home\trade.html:177
+msgid "30 minutes"
+msgstr ""
+
+#: .\home\templates\home\trade.html:178
+msgid "1 hour"
+msgstr ""
+
+#: .\home\templates\home\trade.html:179
+msgid "2 hours"
+msgstr ""
+
+#: .\home\templates\home\trade.html:180
+msgid "4 hours"
+msgstr ""
+
+#: .\home\templates\home\trade.html:181
+msgid "1 day"
+msgstr ""
+
+#: .\home\templates\home\trade.html:182
+msgid "3 days"
+msgstr ""
+
+#: .\home\templates\home\trade.html:183
+msgid "1 week"
+msgstr ""
+
+#: .\home\templates\home\trade.html:184
+msgid "1 month"
+msgstr ""
+
+#: .\home\templates\home\trade.html:189 .\home\templates\home\trade.html:214
+msgid "Close"
+msgstr ""
+
+#: .\home\templates\home\trade.html:202
+msgid "Set Limit"
+msgstr ""
+
+#: .\home\templates\home\trade.html:208
+#, python-format
+msgid "%(limit)s"
+msgstr ""
+
+#: .\home\templates\home\verify-email.html:29
+#: .\templates\account\verification_sent.html:27
+msgid "Verify your Email"
+msgstr ""
+
+#: .\home\templates\home\verify-email.html:36
+#: .\templates\account\verification_sent.html:38
+msgid "We sent verification email to"
+msgstr ""
+
+#: .\home\templates\home\verify-email.html:37
+msgid "Click the link inside to get started!"
+msgstr ""
+
+#: .\home\templates\home\verify-email.html:38
+#: .\templates\account\verification_sent.html:46
+msgid "Go to Dashboard"
+msgstr ""
+
+#: .\home\templates\home\verify-email.html:43
+msgid "Email didn't arrive?"
+msgstr ""
+
+#: .\home\templates\home\wallet.html:39
+msgid "Invite a friend and get 3 extra days"
+msgstr ""
+
+#: .\home\templates\home\wallet.html:40
+msgid "You will receive up to 3 extra when they："
+msgstr ""
+
+#: .\home\templates\home\wallet.html:41
+msgid "Buy Crypto"
+msgstr ""
+
+#: .\home\templates\home\wallet.html:42
+#: .\templates\partials\_container.html:330
+msgid "Deposit"
+msgstr ""
+
+#: .\home\templates\home\wallet.html:43
+msgid "Finish Trading Tasks"
+msgstr ""
+
+#: .\home\templates\home\wallet.html:44 .\templates\home.html:87
+msgid "Learn more"
+msgstr ""
+
+#: .\home\templates\home\wallet.html:52 .\templates\_container.html:22
+msgid "Copy"
+msgstr ""
+
+#: .\home\templates\home\wallet.html:63
+msgid "Referrals"
+msgstr ""
+
+#: .\home\templates\home\wallet.html:71
+msgid "Name"
+msgstr ""
+
+#: .\home\templates\home\wallet.html:73
+msgid "Joined"
+msgstr ""
+
+#: .\home\templates\home\wallet.html:88
+msgid "No Refferals"
+msgstr ""
+
+#: .\home\views.py:239
+msgid "The Timezone, Language and Default currency Changed Successfully!"
+msgstr ""
+
+#: .\home\views.py:241
+msgid "The Timezone and Language Changed Successfully!"
+msgstr ""
+
+#: .\home\views.py:243
+msgid "The Timezone and Default Currency Changed Successfully"
+msgstr ""
+
+#: .\home\views.py:245
+msgid "The Language and Default Currency Changed Successfully"
+msgstr ""
+
+#: .\home\views.py:247
+msgid "The Timezone Changed Successfully"
+msgstr ""
+
+#: .\home\views.py:249
+msgid "The Default Language Changed Successfully"
+msgstr ""
+
+#: .\home\views.py:251
+msgid "Default Currency Changed Successfully"
+msgstr ""
+
+#: .\home\views.py:301
+msgid "A confirmation email has sent to change the existing email"
+msgstr ""
+
+#: .\home\views.py:304
+msgid "This is not your current email"
+msgstr ""
+
+#: .\home\views.py:306
+msgid "The new and current emails cannot be same"
+msgstr ""
+
+#: .\home\views.py:308
+msgid "A user already exists with the new email"
+msgstr ""
+
+#: .\home\views.py:333
+msgid "User Name Updated Successfully!"
+msgstr ""
+
+#: .\home\views.py:336
+msgid "Profile Picture Changed Successfully!"
+msgstr ""
+
+#: .\home\views.py:640
+#, python-brace-format
+msgid "Spot Position {sm}(type: {type}) was executed"
+msgstr ""
+
+#: .\home\views.py:871
+#, python-brace-format
+msgid "Successful Deposit(txid: {tx_id})"
+msgstr ""
+
+#: .\home\views.py:888
+#, python-brace-format
+msgid "Successful Withdrawal(txid: {tx_id})"
+msgstr ""
+
+#: .\home\views.py:1004
+#, python-brace-format
+msgid "Successful Transfer(tranId: {trans_id})"
+msgstr ""
+
+#: .\home\views.py:1157
+#, python-brace-format
+msgid ""
+"Your Today's profit is {request.user.currency_symbol}{accumulated_profit}"
+msgstr ""
+
+#: .\home\views.py:1290
+msgid "Congrats On getting 3 extra days for joining through the referral link."
+msgstr ""
+
+#: .\templates\account\email\base_message.txt:3
+msgid "Hi!"
+msgstr ""
+
+#: .\templates\account\email\base_message.txt:5
+msgid "Thank you for using Glimcy"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_message.html:110
+#: .\templates\account\email\email_confirmation_signup_message.html:109
+msgid ""
+"We're thrilled to have you here! Get ready to dive into your new account"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_message.html:127
+msgid "Change Email"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_message.html:138
+msgid "Want to reset the email for"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_message.html:138
+msgid "Just click the button below"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_message.html:148
+msgid "Confirm Email"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_message.html:158
+#: .\templates\account\email\email_confirmation_signup_message.html:157
+msgid "If that doesn't work, copy and paste the following link in your browser"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_message.html:168
+msgid "Thanks for using"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_message.html:173
+#: .\templates\account\email\email_confirmation_signup_message.html:172
+msgid "Note"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_message.html:173
+#: .\templates\account\email\email_confirmation_signup_message.html:172
+msgid ""
+"You're receiving this e-mail because a user has given your e-mail address to "
+"register an account on Glimcy. If you didn't Signup just ignore this email"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_signup_message.html:137
+msgid ""
+"We're excited to have you get started. First, you need to confirm your "
+"account. Just press the button below"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_signup_message.html:147
+msgid "Confirm Account"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_signup_message.html:167
+msgid "Thanks for using Glimcy"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_subject.txt:3
+msgid "Please Confirm Your E-mail Address"
+msgstr ""
+
+#: .\templates\account\email\password_reset_key_message.html:21
+msgid "Reset Your Login Password"
+msgstr ""
+
+#: .\templates\account\email\password_reset_key_message.html:360
+msgid "Forgot"
+msgstr ""
+
+#: .\templates\account\email\password_reset_key_message.html:366
+msgid "your password"
+msgstr ""
+
+#: .\templates\account\email\password_reset_key_message.html:392
+msgid "Not to worry, we got you! Let\\’s get you a new password"
+msgstr ""
+
+#: .\templates\account\email\password_reset_key_message.html:432
+msgid "Reset password"
+msgstr ""
+
+#: .\templates\account\email\password_reset_key_subject.txt:3
+msgid "Password Reset E-mail"
+msgstr ""
+
+#: .\templates\account\email_confirm.html:29
+msgid "Confirm E-mail Address"
+msgstr ""
+
+#: .\templates\account\email_confirm.html:43
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+
+#: .\templates\account\email_confirm.html:48
+#: .\templates\profile\settings-payment-method.html:130
+msgid "Confirm"
+msgstr ""
+
+#: .\templates\account\email_confirm.html:55
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+
+#: .\templates\account\login.html:40 .\templates\account\signup.html:30
+msgid "or use your email for registration"
+msgstr ""
+
+#: .\templates\account\login.html:54 .\templates\account\signup.html:50
+msgid "Sign in"
+msgstr ""
+
+#: .\templates\account\login.html:60 .\templates\account\signup.html:57
+msgid "or use your account"
+msgstr ""
+
+#: .\templates\account\login.html:64
+msgid "Invalid Email or Password"
+msgstr ""
+
+#: .\templates\account\login.html:85 .\templates\account\signup.html:76
+msgid "Enter your personal details and start journey with us"
+msgstr ""
+
+#: .\templates\account\logout.html:11 .\templates\account\logout.html:42
+msgid "Sign Out"
+msgstr ""
+
+#: .\templates\account\logout.html:29
+msgid "Account Sign Out"
+msgstr ""
+
+#: .\templates\account\logout.html:35
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: .\templates\account\messages\email_confirmation_sent.txt:2
+#, python-format
+msgid "%(email)s"
+msgstr ""
+
+#: .\templates\account\password_change.html:49
+#: .\templates\account\password_set.html:49
+#: .\templates\profile\settings-profile.html:66
+msgid "User Profile"
+msgstr ""
+
+#: .\templates\account\password_change.html:55
+#: .\templates\account\password_set.html:55
+#: .\templates\profile\settings-profile.html:72
+msgid "Your Name"
+msgstr ""
+
+#: .\templates\account\password_change.html:65
+#: .\templates\account\password_set.html:65
+#: .\templates\profile\settings-profile.html:82
+msgid "Max file size is 20mb"
+msgstr ""
+
+#: .\templates\account\password_change.html:75
+#: .\templates\account\password_set.html:75
+msgid "Choose file for User Profile"
+msgstr ""
+
+#: .\templates\account\password_change.html:76
+#: .\templates\account\password_set.html:76
+#: .\templates\profile\settings-profile.html:93
+msgid "Browse"
+msgstr ""
+
+#: .\templates\account\password_change.html:81
+#: .\templates\account\password_change.html:127
+#: .\templates\account\password_change.html:146
+#: .\templates\account\password_set.html:81
+#: .\templates\account\password_set.html:127
+#: .\templates\account\password_set.html:145
+#: .\templates\account\password_set.html:171
+#: .\templates\profile\settings-application.html:88
+#: .\templates\profile\settings-profile.html:101
+#: .\templates\profile\settings-profile.html:142
+#: .\templates\profile\settings-profile.html:160
+#: .\templates\profile\settings-profile.html:186
+msgid "Save"
+msgstr ""
+
+#: .\templates\account\password_change.html:92
+#: .\templates\account\password_set.html:92
+#: .\templates\profile\settings-profile.html:113
+msgid "Change Password & Email"
+msgstr ""
+
+#: .\templates\account\password_change.html:98
+#: .\templates\profile\settings-profile.html:118
+msgid "Invalid Current or New Password! Please Try Again"
+msgstr ""
+
+#: .\templates\account\password_change.html:102
+msgid "Password Changed Successfully"
+msgstr ""
+
+#: .\templates\account\password_change.html:112
+#: .\templates\account\password_set.html:112
+#: .\templates\profile\settings-profile.html:127
+msgid "Current Password"
+msgstr ""
+
+#: .\templates\account\password_change.html:117
+#: .\templates\account\password_set.html:117
+#: .\templates\profile\settings-profile.html:132
+msgid "New Password"
+msgstr ""
+
+#: .\templates\account\password_change.html:122
+#: .\templates\account\password_set.html:122
+#: .\templates\profile\settings-profile.html:137
+msgid "Confirm New Password"
+msgstr ""
+
+#: .\templates\account\password_change.html:135
+#: .\templates\account\password_set.html:135
+#: .\templates\profile\settings-profile.html:150
+msgid "Set Password"
+msgstr ""
+
+#: .\templates\account\password_change.html:140
+#: .\templates\account\password_set.html:140
+#: .\templates\profile\settings-profile.html:155
+msgid "Confirm Password"
+msgstr ""
+
+#: .\templates\account\password_change.html:162
+#: .\templates\account\password_set.html:161
+#: .\templates\profile\settings-profile.html:176
+msgid "Current Email"
+msgstr ""
+
+#: .\templates\account\password_change.html:167
+#: .\templates\account\password_set.html:166
+#: .\templates\profile\settings-profile.html:181
+msgid "New Email"
+msgstr ""
+
+#: .\templates\account\password_reset.html:41
+msgid "The e-mail address is not assigned to any user account"
+msgstr ""
+
+#: .\templates\account\password_reset_done.html:39
+msgid "Password Reset"
+msgstr ""
+
+#: .\templates\account\password_reset_done.html:40
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: .\templates\account\password_reset_from_key.html:37
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+
+#: .\templates\account\password_reset_from_key.html:55
+msgid "change password"
+msgstr ""
+
+#: .\templates\account\password_reset_from_key.html:59
+msgid "Your password is now changed."
+msgstr ""
+
+#: .\templates\account\password_set.html:38
+#: .\templates\partials\settings_menu.html:4
+#: .\templates\profile\settings-profile.html:54
+msgid "Profile"
+msgstr ""
+
+#: .\templates\account\password_set.html:98
+msgid "Passwords don't match! Please Try Again"
+msgstr ""
+
+#: .\templates\account\password_set.html:102
+msgid "Set Password Successfully"
+msgstr ""
+
+#: .\templates\account\signup.html:33
+msgid "A user exists with this email"
+msgstr ""
+
+#: .\templates\account\verification_sent.html:40
+msgid "Click the link inside to get started"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:280
+msgid "Frequently Asked Quetions"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:295
+msgid "What is this service about"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:297
+msgid ""
+"Glimcy is a service designed specifically for those traders who lack the "
+"detailed analytics of their trades in order to make more deep valued "
+"decisions."
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:297
+msgid " Glimcy allows you to look at your trades at any small or big angle."
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:298
+msgid ""
+"If you have several accounts on different cryptocurrency exchanges you can "
+"combine all of the trades and statistics to get the overall look"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:305
+msgid "How much profit can I make"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:306
+msgid "It depends on the market and your Glimcy settings."
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:307
+msgid ""
+"Check our community forum and read what profits other people make and which\n"
+"                Glimcy settings they use"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:315
+msgid "If  2FA access is  lost"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:317
+msgid "Check your notes"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:318
+msgid ""
+"First of all, try to remember if you saved secret key 2FA somewhere. If "
+"you've managed to recover it, create a new account in 2FA app using this "
+"key. After that, sign in to your account using 2FA generated key on this "
+"account"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:319
+msgid "Consider using Authy app"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:320
+msgid ""
+"Secondly, consider installing Authy applications. It allows you to "
+"automatically make backups of all your 2FA accounts. In case of device loss "
+"or it's reset, you can make a recovery in a few simple steps"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:321
+msgid "Contact support"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:322
+msgid ""
+"If you don't have secret 2FA keycode or it is not valid for some reason, "
+"contact our support or send an email to"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:323
+msgid ""
+"In order to reset 2FA password on your account, we must be sure, that you "
+"are it's owner. Attatch as much information aboout your account as possible "
+"to your request, for example"
+msgstr ""
+
+#: .\templates\footer_docs\faq.html:324
+msgid "Subcribtion plan, date of it's registration or subscription expiry date"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:7
+msgid "Trade assets professionally and effortlessly"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:8
+msgid ""
+"Our platform is packed with epic features. So you can focus on your most "
+"important work"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:14
+msgid "Automated Analytics"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:18
+msgid "AI powered"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:22
+msgid "Continues development"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:26
+msgid "Supportive Communit"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:33
+msgid "Ready to get started"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:34
+msgid "Start your free 30-day trial today"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:37
+msgid "Create An Account"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:44
+msgid "The best crypto-trading analytics platform"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:47
+msgid "Info"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:49
+msgid "Getting Started"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:67
+msgid "Connect"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:79
+msgid " Crypto Analytics powered by AI"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_footer.html:80
+msgid "all rights reserved"
+msgstr ""
+
+#: .\templates\footer_docs\partials\_header.html:21
+msgid "Start"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:42
+msgid "Introduction"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:45
+msgid "Most projects never make it or need too much time and the hype is gone."
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:46
+msgid ""
+" There are very few crypto projects with a working product and many projects "
+"are simply fraudulent with no other vision than to collect funds and then "
+"disappear."
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:47
+msgid " They never intended to build anything. How is Glimcy different?"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:48
+msgid ""
+"The founders have spent their own savings to build the platform which will "
+"become the ultimate easy to work solution."
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:49
+msgid ""
+"Glimcy is different our values are team play, honesty, and fairness and the "
+"most important now is the willingness to help people to make better decisions"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:52
+msgid "Glimcy speaks to another tremendous jump forward"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:53
+msgid ""
+"it offers proprietors both the benefits of existing cryptocurrency "
+"utilization and innovation,"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:54
+msgid ""
+" as well as a curious opportunity to be an early adopter of a conceivably "
+"altogether troublesome modern innovation."
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:55
+msgid ""
+"Where already cryptocurrency utilization has been nearly completely the "
+"space of examiners and the tech-savvy,"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:56
+msgid ""
+" Glimcy is set to end up the primary computerized dashboard to enter common "
+"utilization due to its groundbreaking ease-of-use for the standard portable "
+"user"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:62
+msgid "What is Glimcy about"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:65
+msgid ""
+"Glimcy is a service designed specifically for those traders who lack the "
+"detailed analytics of their trades in order to make more deep valued "
+"decisions. "
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:66
+msgid "Glimcy allows you to look at your trades at any small or big angle. "
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:67
+msgid ""
+"Moreover, it will allow you to take full control over your trades with an in-"
+"depth analysis breaking down into multiple perspectives that you can "
+"analyze. "
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:68
+msgid "The cryptocurrency showcase, once so clearly ruled by Bitcoin,"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:69
+msgid ""
+"has gotten to be broken and catalyzed by the presentation of modern "
+"considering and unused innovation."
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:70
+msgid "The service of a basic plan consists of two main features,"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:71
+msgid ""
+"the first one is automated AI technical indicators advancements based on AI "
+"and classical technical analysis"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:77
+#: .\templates\partials\settings_menu.html:6
+#: .\templates\profile\settings-privacy.html:38
+msgid "Privacy"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:80
+msgid ""
+"Nobody ever receives access to any personal data of any user apart from the "
+"Support Team that is 24/7 available to help you. "
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:81
+msgid "Personal data usage range only limits to a very basic level,"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:82
+msgid ""
+"personal data storage strictly complies with the GDPR and can be withdrawn "
+"by users at any point in time"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:88
+msgid "Epilogue"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:91
+msgid ""
+"An epilogue on our own behalf: We are aware that our vision has the "
+"potential to shake the current status quo,"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:92
+msgid " bring about a paradigm shift and herald a new era of trading."
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:93
+msgid " We are working with full vigor to make this vision reality. "
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:94
+msgid ""
+"Nevertheless, as a start-up, we are not immune to possible changes. We can "
+"not predict events,"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:95
+msgid ""
+"such as legal changes or financial and technical specifications, which are "
+"about to happen. "
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:96
+msgid ""
+"We do our best to implement everything as described in this whitepaper. "
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:97
+msgid ""
+"However, we reserve the right to make certain adjustments if necessary. "
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:98
+msgid ""
+"These possible adjustments will always be made in the interests of the "
+"community, the platform, and current jurisprudence"
+msgstr ""
+
+#: .\templates\footer_docs\whitepaper.html:101
+msgid "Thank you for your understanding"
+msgstr ""
+
+#: .\templates\home.html:40
+#, python-format
+msgid "Gain 1000%% out of trading potential"
+msgstr ""
+
+#: .\templates\home.html:42
+msgid ""
+"New generation automated analytics of cryptocurrency markets powered by "
+"Artificial Intelligence"
+msgstr ""
+
+#: .\templates\home.html:44
+msgid "Get Started"
+msgstr ""
+
+#: .\templates\home.html:72 .\templates\home.html:74 .\templates\home.html:76
+#: .\templates\home.html:78
+msgid "BEST CRYPTO ANALYTICS"
+msgstr ""
+
+#: .\templates\home.html:73 .\templates\home.html:75 .\templates\home.html:77
+#: .\templates\home.html:79
+msgid "JOIN TO GET 30 DAYS OFF"
+msgstr ""
+
+#: .\templates\home.html:87
+msgid "Do you like cookies"
+msgstr ""
+
+#: .\templates\home.html:87
+msgid "We use cookies to ensure you get the best experience on our website"
+msgstr ""
+
+#: .\templates\home.html:90
+msgid "I agree"
+msgstr ""
+
+#: .\templates\partials\_container.html:16
+msgid "Available Balance"
+msgstr ""
+
+#: .\templates\partials\_container.html:43
+msgid "Balance"
+msgstr ""
+
+#: .\templates\partials\_container.html:50
+msgid "Total Balance"
+msgstr ""
+
+#: .\templates\partials\_container.html:86
+msgid "Analytics"
+msgstr ""
+
+#: .\templates\partials\_container.html:104
+msgid "Accumulated Profit"
+msgstr ""
+
+#: .\templates\partials\_container.html:110
+msgid "Trading Volume"
+msgstr ""
+
+#: .\templates\partials\_container.html:116
+msgid "Volume"
+msgstr ""
+
+#: .\templates\partials\_container.html:122
+msgid "All Time High"
+msgstr ""
+
+#: .\templates\partials\_container.html:148
+msgid "Equity"
+msgstr ""
+
+#: .\templates\partials\_container.html:151
+msgid "balance combined with"
+msgstr ""
+
+#: .\templates\partials\_container.html:151
+msgid "profit/loss"
+msgstr ""
+
+#: .\templates\partials\_container.html:155
+msgid "Used"
+msgstr ""
+
+#: .\templates\partials\_container.html:158
+#: .\templates\partials\_header.html:92
+msgid "Total"
+msgstr ""
+
+#: .\templates\partials\_container.html:158
+msgid "amount used in"
+msgstr ""
+
+#: .\templates\partials\_container.html:162
+msgid "Free"
+msgstr ""
+
+#: .\templates\partials\_container.html:165
+msgid "Usable"
+msgstr ""
+
+#: .\templates\partials\_container.html:165
+msgid "balance"
+msgstr ""
+
+#: .\templates\partials\_container.html:165
+msgid "Equal to equity minus"
+msgstr ""
+
+#: .\templates\partials\_container.html:172
+msgid "Percentage ratio of equity to used"
+msgstr ""
+
+#: .\templates\partials\_container.html:192
+msgid "Original cost of all open positions"
+msgstr ""
+
+#: .\templates\partials\_container.html:199
+msgid "Paper valuation of all open positions"
+msgstr ""
+
+#: .\templates\partials\_container.html:203
+msgid "Profit"
+msgstr ""
+
+#: .\templates\partials\_container.html:206
+msgid "Paper profit of all open positions"
+msgstr ""
+
+#: .\templates\partials\_container.html:210
+msgid "Loss"
+msgstr ""
+
+#: .\templates\partials\_container.html:213
+msgid "Paper loss of all open positions"
+msgstr ""
+
+#: .\templates\partials\_container.html:217
+#: .\templates\partials\settings_menu.html:12
+msgid "Fees"
+msgstr ""
+
+#: .\templates\partials\_container.html:220
+msgid "Current Fee"
+msgstr ""
+
+#: .\templates\partials\_container.html:249
+#: .\templates\partials\_container.html:343
+#: .\templates\partials\_container.html:433
+#: .\templates\partials\_container.html:523
+msgid "Status"
+msgstr ""
+
+#: .\templates\partials\_container.html:279
+msgid "Currency"
+msgstr ""
+
+#: .\templates\partials\_container.html:325
+msgid "Financial Operations"
+msgstr ""
+
+#: .\templates\partials\_container.html:342
+#: .\templates\partials\_container.html:432
+msgid "Address"
+msgstr ""
+
+#: .\templates\partials\_container.html:419
+msgid "Withdrawals"
+msgstr ""
+
+#: .\templates\partials\_container.html:500
+msgid "No Withdrawals"
+msgstr ""
+
+#: .\templates\partials\_container.html:511
+msgid "Transfers"
+msgstr ""
+
+#: .\templates\partials\_container.html:519
+msgid "Transfer Id"
+msgstr ""
+
+#: .\templates\partials\_header.html:32
+#, python-format
+msgid "%(messages|length)s"
+msgstr ""
+
+#: .\templates\partials\_header.html:39
+msgid "Notifications"
+msgstr ""
+
+#: .\templates\partials\_header.html:55
+msgid "No Notifications"
+msgstr ""
+
+#: .\templates\partials\_header.html:59
+msgid "More"
+msgstr ""
+
+#: .\templates\partials\_header.html:88
+msgid "Available"
+msgstr ""
+
+#: .\templates\partials\_header.html:97
+msgid "Days Left"
+msgstr ""
+
+#: .\templates\partials\_header.html:100
+msgid "Setting"
+msgstr ""
+
+#: .\templates\partials\_header.html:103
+msgid "Lock"
+msgstr ""
+
+#: .\templates\partials\_header.html:106
+msgid "Logout"
+msgstr ""
+
+#: .\templates\partials\_header.html:113
+msgid "Register"
+msgstr ""
+
+#: .\templates\partials\settings_menu.html:5
+#: .\templates\profile\settings-application.html:49
+msgid "Preferences"
+msgstr ""
+
+#: .\templates\partials\settings_menu.html:7
+#: .\templates\profile\settings-payment-method.html:38
+msgid "Payment Method"
+msgstr ""
+
+#: .\templates\partials\settings_menu.html:8
+msgid "Security"
+msgstr ""
+
+#: .\templates\partials\settings_menu.html:9
+#: .\templates\profile\settings-activity.html:38
+msgid "Activity"
+msgstr ""
+
+#: .\templates\partials\settings_menu.html:11
+msgid "Social Connections"
+msgstr ""
+
+#: .\templates\profile\profile.html:41
+msgid "Welcome"
+msgstr ""
+
+#: .\templates\profile\profile.html:43
+msgid ""
+"Looks like you are not verified yet. Verify yourself to use the full "
+"potential of Glimcy."
+msgstr ""
+
+#: .\templates\profile\profile.html:50
+msgid "Verify email"
+msgstr ""
+
+#: .\templates\profile\profile.html:67
+msgid "Information"
+msgstr ""
+
+#: .\templates\profile\profile.html:68
+msgid "Edit"
+msgstr ""
+
+#: .\templates\profile\profile.html:74
+msgid "USER ID"
+msgstr ""
+
+#: .\templates\profile\profile.html:80
+msgid "EMAIL ADDRESS"
+msgstr ""
+
+#: .\templates\profile\profile.html:86
+msgid "COUNTRY OF RESIDENCE"
+msgstr ""
+
+#: .\templates\profile\profile.html:92
+msgid "JOINED SINCE"
+msgstr ""
+
+#: .\templates\profile\profile.html:105
+msgid "VERIFY EMAIL"
+msgstr ""
+
+#: .\templates\profile\profile.html:109
+msgid "Pending"
+msgstr ""
+
+#: .\templates\profile\profile.html:111
+#, python-format
+msgid "Your account is unverified. Get 100%% of safety"
+msgstr ""
+
+#: .\templates\profile\profile.html:113
+msgid "Send Email"
+msgstr ""
+
+#: .\templates\profile\profile.html:117
+msgid "Email Verified"
+msgstr ""
+
+#: .\templates\profile\profile.html:118
+msgid "Add Connections"
+msgstr ""
+
+#: .\templates\profile\profile.html:126
+msgid "Earn 4 days for Free"
+msgstr ""
+
+#: .\templates\profile\profile.html:129
+msgid "Refer your friends and earn 4 days free per each you invite"
+msgstr ""
+
+#: .\templates\profile\profile.html:130
+msgid "Referral Program"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:50
+msgid "Web Sessions Profile"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:52
+msgid ""
+"These sessions are currently signed in to your account. Sign out\n"
+"                                                    all other sessions"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:60
+msgid "Signed In"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:61
+msgid "Browser"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:62
+#: .\templates\profile\settings-activity.html:98
+msgid "IP Address"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:63
+msgid "Near"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:64
+msgid "Current"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:88
+msgid "Account Activity"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:90
+msgid "Recent activity on your account"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:96
+#: .\templates\profile\settings-api.html:103
+msgid "Action"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:97
+msgid "Source"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:99
+msgid "Location"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:100
+msgid "When"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:123
+#: .\templates\profile\settings-activity.html:127
+msgid "Close Account"
+msgstr ""
+
+#: .\templates\profile\settings-activity.html:126
+msgid "Withdraw funds and close your Qash account"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:54
+#: .\templates\profile\settings-api.html:82
+msgid "Add API Keys"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:62
+#: .\templates\profile\settings-api.html:99
+msgid "Public Key"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:67
+#: .\templates\profile\settings-api.html:100
+msgid "Secret Key"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:72
+msgid "Select Exchange"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:74
+msgid "Binance"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:79
+#: .\templates\profile\settings-profile.html:173
+#, python-format
+msgid "%(msg)s"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:92
+msgid "Your API Keys"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:101
+msgid "Exchange"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:141
+msgid "No API Keys Added"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:167
+msgid "Delete API Keys?"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:173
+msgid "Are you sure you want to permanently delete these API keys"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:174
+msgid "Warning"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:174
+msgid "The action cannot be reverted once you delete the keys"
+msgstr ""
+
+#: .\templates\profile\settings-api.html:181
+msgid "Delete"
+msgstr ""
+
+#: .\templates\profile\settings-application.html:38
+msgid "Application"
+msgstr ""
+
+#: .\templates\profile\settings-application.html:55
+msgid "Language Default"
+msgstr ""
+
+#: .\templates\profile\settings-application.html:68
+msgid "Currency Default"
+msgstr ""
+
+#: .\templates\profile\settings-application.html:79
+msgid "Time Zone"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:49
+msgid "Add a payment method"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:58
+msgid "Account"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:60
+#: .\templates\profile\settings-payment-method.html:74
+msgid "Verified"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:63
+#: .\templates\profile\settings-payment-method.html:77
+msgid "Manage"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:71
+msgid "Master Card"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:72
+msgid "Credit Card"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:82
+msgid "Add New PayPal"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:84
+msgid "Add New Card"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:106
+msgid "Add PayPal account"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:113
+msgid "PayPal Address"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:117
+msgid "Account owner fulll name"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:121
+msgid "Something else"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:140
+#: .\templates\profile\settings-payment-method.html:206
+msgid "Success"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:149
+msgid "Congratulation. Your PayPal added"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:165
+msgid "Add card"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:172
+msgid "Name on card"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:176
+msgid "Card number"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:180
+msgid "Expiration"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:188
+msgid "Postal code"
+msgstr ""
+
+#: .\templates\profile\settings-payment-method.html:215
+msgid "Congratulation. Your card added"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:49
+msgid "Your Glimcy account"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:53
+msgid ""
+"You have a number of rights over your personal data. For more\n"
+"                                                    detailed information on "
+"these choices, please read our full"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:55
+#: .\templates\profile\settings-privacy.html:76
+#: .\templates\profile\settings-privacy.html:77
+msgid "Privacy Policy"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:56
+msgid "and our"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:56
+msgid "Cookie Policy"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:62
+msgid "Request export"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:63
+msgid "Request export of my data in a machine-readable form"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:64
+msgid "Request data export"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:68
+msgid "Request pdf export"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:69
+msgid "Request export of the analytics section"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:70
+msgid "Export Pdf"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:77
+#: .\templates\profile\settings-privacy.html:84
+msgid "Read our"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:83
+msgid "Manage Cookies"
+msgstr ""
+
+#: .\templates\profile\settings-privacy.html:84
+msgid "Cookies Policy"
+msgstr ""
+
+#: .\templates\profile\settings-profile.html:63
+msgid "the user is user {{ user }}"
+msgstr ""
+
+#: .\templates\profile\settings-profile.html:92
+msgid "Choose image for User Profile"
+msgstr ""
+
+#: .\templates\profile\settings-profile.html:100
+msgid "Crop"
+msgstr ""
+
+#: .\templates\socialaccount\authentication_error.html:5
+#: .\templates\socialaccount\authentication_error.html:8
+msgid "Social Network Login Failure"
+msgstr ""
+
+#: .\templates\socialaccount\authentication_error.html:10
+msgid ""
+"An error occurred while attempting to login via your social network account."
+msgstr ""
+
+#: .\templates\socialaccount\connections.html:66
+msgid ""
+"You can sign in to your account using any of the following third party "
+"accounts:"
+msgstr ""
+
+#: .\templates\socialaccount\connections.html:91
+msgid ""
+"You currently have no social network accounts connected to this account."
+msgstr ""
+
+#: .\templates\socialaccount\connections.html:94
+msgid "Add a 3rd Party Account"
+msgstr ""
+
+#: .\templates\socialaccount\login_cancelled.html:5
+#: .\templates\socialaccount\login_cancelled.html:9
+msgid "Login Cancelled"
+msgstr ""
+
+#: .\templates\socialaccount\login_cancelled.html:13
+#, python-format
+msgid ""
+"You decided to cancel logging in to our site using one of your existing "
+"accounts. If this was a mistake, please proceed to <a href=\"%(login_url)s"
+"\">sign in</a>."
+msgstr ""
+
+#: .\templates\socialaccount\messages\account_connected.txt:2
+msgid "The social account has been connected."
+msgstr ""
+
+#: .\templates\socialaccount\messages\account_connected_other.txt:2
+msgid "The social account is already connected to a different account."
+msgstr ""
+
+#: .\templates\socialaccount\messages\account_disconnected.txt:2
+msgid "The social account has been disconnected."
+msgstr ""
+
+#: .\templates\socialaccount\signup.html:36
+#, python-format
+msgid ""
+"You are about to use your %(provider_name)s account to login to\n"
+"                                            %(site_name)s. As a final step, "
+"please complete the following form:"
+msgstr ""
+
+#: .\users\models.py:29
+msgid "The Email must be set"
+msgstr ""
+
+#: .\users\models.py:45
+msgid "Superuser must have is_staff=True."
+msgstr ""
+
+#: .\users\models.py:47
+msgid "Superuser must have is_superuser=True."
+msgstr ""
+
+#: .\users\models.py:53
+msgid "email"
+msgstr ""

@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="{% static 'alt_css/bootstrap-reboot.min.css' %}">
+	<link rel="stylesheet" href="{% static 'alt_css/bootstrap-grid.min.css' %}">
+	<link rel="stylesheet" href="{% static 'alt_css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'alt_css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'alt_css/select2.min.css' %}">
+	<link rel="stylesheet" href="{% static 'alt_css/style.css' %}">
+
+	<!-- Favicons -->
+	<link rel="icon" type="image/png" href="{% static 'alt_icon/favicon-32x32.png' %}" sizes="32x32">
+	<link rel="apple-touch-icon" href="{% static 'alt_icon/favicon-32x32.png' %}">
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="xesizias">
+	<title>GiftWorld – NFT's Marketplace!</title>
+
+</head>
+<body>
+	<!-- header -->
+	{% include 'alt_partials/_header.html' %}
+	<!-- end header -->
+
+	<!-- main content -->
+	<main class="main">
+		<!-- home -->
+		{% include 'alt_partials/_home.html' %}
+		<!-- end home -->
+
+		<div class="container">
+			<!-- explore -->
+			{% include 'alt_partials/_explore.html' %}
+			<!-- end explore -->
+
+			<!-- new authors -->
+			{% include 'alt_partials/_new_authors.html' %}
+			<!-- end new authors -->
+		</div>
+	</main>
+	<!-- end main content -->
+
+	<!-- footer -->
+	{% include 'alt_partials/_footer.html' %}
+	<!-- end footer -->
+
+	<!-- modal asset -->
+	{% include 'alt_partials/_modal.html' %}
+	<!-- end modal asset -->
+
+	<!-- JS -->
+	<script src="{% static 'alt_js/jquery-3.5.1.min.js' %}"></script>
+	<script src="{% static 'alt_js/bootstrap.bundle.min.js' %}"></script>
+	<script src="{% static 'alt_js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'alt_js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'alt_js/select2.min.js' %}"></script>
+	<script src="{% static 'alt_js/smooth-scrollbar.js' %}"></script>
+	<script src="{% static 'alt_js/jquery.countdown.min.js' %}"></script>
+	<script src="{% static 'alt_js/custom.js' %}"></script>
+</body>
+
+<!-- Mirrored from dmitryvolkov.me/demo/unitok/index3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 03 Jun 2021 09:50:33 GMT -->
+</html>

@@ -1,0 +1,47 @@
+{% load static %}
+
+<div class="tab-pane fade show active" id="tab-1" role="tabpanel">
+  <div class="row row--grid">
+    <div class="col-12 col-sm-6 col-lg-4">
+      <!-- card -->
+      {% for user_post in logged_in_user_posts %}
+      <div class="card">
+        {% if user_post.asset_image %}
+          <a href="item.html" class="card__cover">
+            <img src="{{user_post.asset_image.url}}" alt="">
+          </a>
+        {% else %}
+          <a href="item.html" class="card__cover">
+            <img src="" alt="">
+          </a>
+        {% endif %}
+        <h3 class="card__title"><a href="{% url 'home:article_detail' asset_slug=user_post.asset_slug %}">{{user_post.asset_name}}</a></h3>
+        <div class="card__author card__author--verified">
+          {% if user.image %}
+          <img src="{{ user.image.url }}" alt="">
+          {% else %}
+          <img src="{% static 'alt_img/avatars/everave_profile.png'%}" alt="">
+          {% endif %}
+          <a href="{% url 'users:show_profile_page' username=user_post.author.username %}">@{{user.username}}</a>
+        </div>
+        <div class="card__info">
+          <div class="card__price">
+            <span>Reserve price</span>
+            <span>{{user_post.asset_price}}</span>
+          </div>
+
+          <button class="card__likes" type="button">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.16,5A6.29,6.29,0,0,0,12,4.36a6.27,6.27,0,0,0-8.16,9.48l6.21,6.22a2.78,2.78,0,0,0,3.9,0l6.21-6.22A6.27,6.27,0,0,0,20.16,5Zm-1.41,7.46-6.21,6.21a.76.76,0,0,1-1.08,0L5.25,12.43a4.29,4.29,0,0,1,0-6,4.27,4.27,0,0,1,6,0,1,1,0,0,0,1.42,0,4.27,4.27,0,0,1,6,0A4.29,4.29,0,0,1,18.75,12.43Z"/></svg> -->
+            <span>{{user_post.total_likes}}</span>
+          </button>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- end card -->
+    </div>
+
+
+
+  <!-- end collapse -->
+  </div>
+</div>

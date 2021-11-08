@@ -1,0 +1,110 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Qash - {% trans 'Crypto Exchange Dashboard UI Kit' %}</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <!-- Custom Stylesheet -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <div id="preloader"><i>.</i><i>.</i><i>.</i></div>
+
+    <div id="main-wrapper">
+
+        <!-- START OF HEADER -->
+        {% include 'partials/_header.html' %}
+        <!-- END OF HEADER -->
+
+        <!-- START OF SIDEBAR -->
+        {% include 'partials/_sidebar.html' %}
+        <!-- END OF SIDEBAR -->
+
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="page-title">
+                            <h4>{% trans 'Privacy' %}</h4>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                               {% include 'partials/settings_menu.html' %}
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="card">
+                                            <div class="card-header px-0">
+                                                <h4 class="card-title">{% trans 'Your Glimcy account' %}</h4>
+                                            </div>
+                                            <div class="card-body px-0">
+                                                <p>
+                                                    {% blocktrans %}You have a number of rights over your personal data. For more
+                                                    detailed information on these choices, please read our full{% endblocktrans %}
+                                                    <a href="{% url 'privacy_policy' %}">{% trans 'Privacy Policy' %}</a>
+                                                    {% trans 'and our' %} <a href="{% url 'cookies_policy' %}">{% trans 'Cookie Policy' %}</a>.
+                                                </p>
+
+                                                <hr class="dropdown-divider my-4">
+
+                                                <div class="privacy-content">
+                                                    <h5>{% trans 'Request export' %}</h5>
+                                                    <p>{% blocktrans %}Request export of my data in a machine-readable form{% endblocktrans %}.</p>
+                                                    <a href="{% url 'generate_csv' %}" class="btn btn-outline-primary">{% trans 'Request data export' %}</a>
+                                                </div>
+                                                <br><br>
+<!--                                                <div class="privacy-content">-->
+<!--                                                    <h5>{% trans 'Request pdf export' %}</h5>-->
+<!--                                                    <p>{% blocktrans %}Request export of the analytics section{% endblocktrans %}.</p>-->
+<!--                                                    <a href="/" class="btn btn-outline-primary">{% trans 'Export Pdf' %}</a>-->
+<!--                                                </div>-->
+<!--{% url 'generate_pdf' %}-->
+                                                <hr class="dropdown-divider my-4">
+
+                                                <div class="privacy-content">
+                                                    <h5>{% trans 'Privacy Policy' %}</h5>
+                                                    <p>{% trans 'Read our' %} <a href="{% url 'privacy_policy' %}">{% trans 'Privacy Policy' %}.</a></p>
+                                                </div>
+
+                                                <hr class="dropdown-divider my-4">
+
+                                                <div class="privacy-content">
+                                                    <h5>{% trans 'Manage Cookies' %}</h5>
+                                                    <p>{% trans 'Read our' %} <a href="{% url 'cookies_policy' %}">{% trans 'Cookies Policy' %}.</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

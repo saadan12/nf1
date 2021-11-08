@@ -1,0 +1,86 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<!-- <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"> -->
+<head>
+   <meta charset="utf8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="viewport" content="width=device-width,initial-scale=1">
+   <meta name="x-apple-disable-message-reformatting">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="{% static 'alt_css/email_template_style.css' %}">
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
+   <!-- <title>Everave!, the app for ravers</title> -->
+
+</head>
+<body style="box-sizing: border-box; background: #000; margin: 0; padding: 0; width: 100%; word-break: break-word; -webkit-font-smoothing: antialiased;">
+   <div style="display: none; line-height: 0; font-size: 0;"></div>
+   <table class="wrapper all-font-sans" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+      <tr>
+         <td align="center" class="sm-p-16" style="padding-top: 40px; padding-bottom: 40px;" width="100%">
+            <table class="sm-w-full" width="600" cellpadding="0" cellspacing="0" role="presentation">
+               <tr>
+                  <td>
+                     <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                           <td>
+                              <a href="/">
+                              <img class="logo-evearve" style="display: block; margin-left: auto; margin-right: auto; width: 40%;" src="images/everave_glasses.svg" alt="">
+                              </a>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="sm-py-32" style="padding-bottom: 40px; padding-top: 80px; text-align: center;" align="center">
+                     <h2 class="sm-text-5xl sm-leading-48" style="color: #ffff;">Confirm email, <br class="sm-hidden"><span style="background: -webkit-linear-gradient(#ff096d, #ff7533);-webkit-background-clip: text; -webkit-text-fill-color: transparent;">to rave.</span></h2>
+                  </td>
+               </tr>
+            </table>
+            <table class="sm-w-full" width="700" cellpadding="0" cellspacing="0" role="presentation">
+               <tr>
+                  <td class="sm-h-32" colspan="2" height="48"></td>
+               </tr>
+               <p style="display:none"id="p1">{{activate_url}}</p>
+               <tr>
+                  <td class="sm-px-0 sm-py-32" colspan="2" style="padding-left: 48px; padding-right: 48px; padding-top: 44px; padding-bottom: 24px;">
+                     <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                           <th style="mso-padding-alt: 24px 48px; border-radius: 4px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);">
+                              <a href="{{ activate_url }}" class="bubbly-button rave-button sm-text-xl" style="display: block; font-weight: 600; line-height: 100%; width: 100%; color: #ffffff; font-size: 24px; text-decoration: none;">Confirm email</a>
+                           </th>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="sm-px-0 sm-py-32" colspan="2" style="padding-left: 48px; padding-right: 48px;">
+                     <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                           <th class="" style="mso-padding-alt: 24px 48px; border-radius: 4px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06); ">
+                              <button onclick="copyToClipboard('#p1')" class="bubbly-button rave-button sm-text-xl" style="display: block; font-weight: 600; width: 100%; line-height: 100%; color: #ffffff; font-size: 24px; text-decoration: none;">Copy link</button>
+                           </th>
+                        </tr>
+                     </table>
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+   </table>
+   <script>
+      function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+      }
+
+
+   </script>
+   <script src="{% static 'alt_js/email_template_js.js' %}"></script>
+   </body>
+</html>

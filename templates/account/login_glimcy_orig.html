@@ -1,0 +1,103 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+  <link rel="stylesheet" href="{% static 'css/script-new-login.css' %}">
+	<style>
+		#error-signin{
+			color: red;
+			margin-top: 7px !important;
+		}
+		#ghost {
+			background-color: transparent !important;
+			border-color: #FFFFFF !important;
+		}
+	</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		{% load i18n %}
+		<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+		{% csrf_token %}
+			<h1>{% trans 'Create Account' %}</h1>
+			<div class="social-container">
+				<a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/accounts/facebook/login/?process=login&scope=email" class="social">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+				<a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/accounts/google/login/?process=login" class="social">
+					<i class="fab fa-google-plus-g"></i>
+				</a>
+				<a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/accounts/linkedin_oauth2/login/?process=login" class="social">
+					<i class="fab fa-linkedin-in"></i>
+				</a>
+			</div>
+			<span>{% trans 'or use your email for registration' %}</span>
+			<input type="text" name="first_name" placeholder="Name" required />
+			<input type="email" name="email" placeholder="Email" required />
+			<input type="password" name="password1" placeholder="Password" required minlength="8" />
+			{% if redirect_field_value %}
+		    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+		    {% endif %}
+			<button type="submit">{% trans "Sign Up" %} &raquo;</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		{% load i18n %}
+		<form class="login" method="POST" action="{% url 'account_login' %}">
+		{% csrf_token %}
+			<h1>{% trans 'Sign in' %}</h1>
+			<div class="social-container">
+			<a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/accounts/facebook/login/?process=login&scope=email" class="social"><i class="fab fa-facebook-f"></i></a>
+			<a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/accounts/google/login/?process=login" class="social"><i class="fab fa-google-plus-g"></i></a>
+			<a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/accounts/linkedin_oauth2/login/?process=login" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>{% trans 'or use your account' %}</span>
+
+			{% if request.method == "POST" %}
+			<span id="error-signin">
+				{% trans 'Invalid Email or Password' %}!
+			</span>
+			{% endif %}
+			<input type="email" name="login" required placeholder="Email" />
+			<input type="password" name="password" required placeholder="Password" minlength="8"/>
+			{% if redirect_field_value %}
+			<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+			{% endif %}
+			<a class="button secondaryAction" href="{% url 'reset' %}">{% trans "Forgot Password?" %}</a>
+			<button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>{% trans 'Welcome Back' %}!</h1>
+				<p>{% trans 'To keep connected with us please login with your personal info' %}</p>
+				<button class="ghost" id="signIn">{% trans 'Sign In' %}</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>{% trans 'Hello, Friend' %}!</h1>
+				<p>{% trans 'Enter your personal details and start journey with us' %}</p>
+				<button class="ghost" id="signUp">
+					{% trans 'Sign Up' %}
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+
+</footer>
+<!-- partial -->
+<script  src="{% static 'js/script-new-login.js' %}"></script>
+<script>
+	$("#terms").removeClass("form-control");
+</script>
+</body>
+</html>

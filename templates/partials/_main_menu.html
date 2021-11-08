@@ -1,0 +1,35 @@
+{% load static %}
+<div class="menu">
+    <ul>
+        <li>
+            <a href="{% url 'trade' %}" data-toggle="tooltip" data-placement="right" title="Analytics">
+                <span><i class="icofont-ui-home"></i></span>
+            </a>
+        </li>
+        <li><a href="{% url 'home' %}" data-toggle="tooltip" data-placement="right" title="Graphs">
+                <span><i class="icofont-stack-exchange"></i></span>
+            </a>
+        </li>
+        <li><a href="{% url 'wallet' %}" data-toggle="tooltip" data-placement="right" title="Call friends">
+                <span><i class="icofont-wallet"></i></span>
+            </a>
+        </li>
+
+        {% if home_page %}
+        <li><a onclick="generatePDF()" style="cursor:pointer;" data-toggle="tooltip" data-placement="right"
+                title="Export Pdf">
+                <span><i class="icofont-download"></i></span>
+            </a>
+        </li>
+        {% endif %}
+        <li class="logout"><a href="{% url 'account_login' %}" data-toggle="tooltip" data-placement="right"
+                title="Signout">
+                <span><i class="icofont-power"></i></span>
+            </a>
+        </li>
+    </ul>
+
+    <p class="copyright">
+        &#169; <a href="#">Glimcy</a>
+    </p>
+</div>

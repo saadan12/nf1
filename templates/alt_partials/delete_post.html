@@ -1,0 +1,51 @@
+{% extends 'alt_partials/base.html' %}
+{% block title %} Delete Blog Post {% endblock %}
+{% block content %}
+
+
+{% if user.is_authenticated %}
+  {% if user.id == post.author.id %}
+  <h1>Delete Post...</h1>
+  <br><br>
+  <h3>Delete {{ post.title }}</h3>
+  <br>
+  <div class="form-group">
+    <form method="POST">
+      {% csrf_token %}
+      <strong>Are you sure?!</strong><br><br>
+      <button class="button">
+        <div class="trash">
+            <div class="top">
+                <div class="paper"></div>
+            </div>
+            <div class="box"></div>
+            <div class="check">
+                <svg viewBox="0 0 8 6">
+                    <polyline points="1 3.4 2.71428571 5 7 1"></polyline>
+                </svg>
+            </div>
+        </div>
+        <span>Delete Item</span>
+      </button>
+    </form>
+  </div>
+  {% else %}
+  You are not allowed here! (and you know it...)
+  {% endif %}
+{% else %}
+You are not allowed here! (and you know it...)
+{% endif %}
+
+
+{% endblock %}
+
+
+<script>
+document.querySelectorAll('.button').forEach(button => button.addEventListener('click', e => {
+  if(!button.classList.contains('delete')) {
+      button.classList.add('delete');
+      setTimeout(() => button.classList.remove('delete'), 3200);
+  }
+  e.preventDefault();
+}));
+</script>

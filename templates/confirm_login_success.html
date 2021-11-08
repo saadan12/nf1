@@ -1,0 +1,64 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Qash - {% trans 'Crypto Exchange Dashboard UI Kit' %}</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <!-- Custom Stylesheet -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script>
+            let baseUrl = window.location.origin;
+
+            setTimeout(function(){
+              window.location = `${baseUrl}/accounts/login`;
+             }, 3000);
+    </script>
+</head>
+
+<body>
+
+    <div id="preloader"><i>.</i><i>.</i><i>.</i></div>
+
+    <div id="main-wrapper">
+
+        <div class="authincation">
+            <div class="container h-100">
+                <div class="row justify-content-center h-100 align-items-center">
+                    <div class="col-xl-5 col-md-7">
+                        <div class="mini-logo text-center my-3">
+                            <a href="{% url 'intro' %}"><img src="{% static 'images/svg.png' %}" alt=""></a>
+                            <h3 class="card-title mt-3">{% trans 'Success' %}</h3>
+                        </div>
+                        <div class="auth-form card">
+                            <div class="card-body text-center">
+                                <h6 class="pb-2">You Can Login Now</h6>
+                                <h4>Redirecting to Signin page...</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

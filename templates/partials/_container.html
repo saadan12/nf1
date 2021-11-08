@@ -1,0 +1,622 @@
+{% load static %}
+{% load i18n %}
+<div class="container" id="down">
+    <div class="row">
+
+        {% if no_keys or error_code == '-2015' or error_code == '-1003' %}
+        <div class="col-xxl-9 col-xl-9" style="margin-right:33px">
+            <div class="card home-chart" >
+                <div class="card-header">
+                    <h4 class="card-title home-chart" style="color:red;">
+                        {% if no_keys %}
+                        {% trans "No Api Keys Added" %}
+                        {% elif error_code == '-2015' %}
+                        {% trans "Invalid Api Keys or Permissions" %}
+                        {% elif error_code == '-1003' %}
+                        {% trans "Failed to load the data" %}
+                        {% endif %}
+                    </h4>
+                </div>
+                <div class="card-body">
+                    {% if no_keys %}
+                    <p>{% trans "Please add the api keys for your binance account to get started!" %}</p>
+                    {% elif error_code == '-2015' %}
+                    <p>{% trans "You have invalid api keys or permissions to get your data from binance." %}</p>
+                    <h4 style="margin-top:15px;">Possible Actions</h4>
+                    <ul>
+                        <li><b>1.</b> &nbsp;Check if your api keys are correct</li>
+                        <li style="padding: 13px 0 !important;"><b>2.</b> &nbsp;Enable <b>Futures</b> in the <b>Edit Restrictions</b> Section of your binance account</li>
+                        <li><b>3.</b>  [Futures] API Key created before your futures account opened. If the Key was generated before futures account is open, you will still see this error even “Enable Future” is checked. Please generate a new key and have a try</li>
+                    </ul>
+                    {% elif error_code == '-1003' %}
+                    <p>{% trans "Failed to load data from the servers. Please try again" %}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+         <!-----------------Balance Boxes ------------------------------->
+        <div class="row">
+            <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                <div class="wallet-widget card">
+                    <h5>{% trans 'Available Balance' %}</h5>
+                    <h2><span class="text-success">{{ available_balance }}</span> {{ currency }}</h2>
+                    <p>= {{ available_balance_btc }} BTC</p>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6" >
+                <div class="wallet-widget card" >
+                    <h5>Pending Balance</h5>
+                    <h2><span class="text-warning">{{ pending_balance }}</span> {{ currency }}</h2>
+                    <p>= {{ pending_btc }} BTC</p>
+                </div>
+            </div>
+            <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+            <div class="wallet-widget card">
+                <h5>Locked Balance</h5>
+                <h2><span class="text-danger">{{ locked_balance }}</span> {{ currency }}</h2>
+                <p>= {{ locked_btc }} BTC</p>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+
+        <!----------------- Balance ------------------------------------>
+        {% if spot_balance > 0 %}
+        <div class="col-xxl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">{% trans 'Balance' %}</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row align-items-center pt-2">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6">
+                            <div class="balance-chart">
+                                <div id="balance-chart"></div>
+                                <h4 class="mr-2">{% trans 'Total Balance' %} = {{ currency_symbol }}{{ spot_balance }}</h4>
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6">
+                            <ul class="balance-widget pr-2" style="position: relative;height: 380px;overflow-y:auto;">
+                                {% if balance_list %}
+<!--                                [key, symbol_price, amount, value, color, coin_icon]  -->
+                                    {% for item in balance_list %}
+                                        <li>
+                                            <div class="icon-title">
+                                                {% if item.4.image %}
+                                                <img width="33px" height="33px" src="{{ item.4.image.url }}" alt="" style="margin-right:10px;">
+                                                {% else %}
+                                                <i class="cc {{ item.0 }}"></i>
+                                                {% endif %}
+                                                <span>{{ item.0 }}</span>
+                                            </div>
+                                            <div class="text-right">
+                                                <h5>{{ item.2 }} {{ item.0 }}</h5>
+                                                <span>{{ item.3 }} {{ user.default_currency }}</span>
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!----------------- Analytics Graph ---------------------------->
+        <div class="col-xxl-8 col-xl-8">
+            <div class="card home-chart">
+                <div class="card-header">
+                    <h4 class="card-title home-chart">
+                        {% trans 'Analytics' %}<br>
+                        <span class="text-muted" style="font-size:12px !important;">
+                            x-axis: Date <br>y-axis: Asset Value({{ user.default_currency }})
+                        </span>
+                    </h4>
+
+                    <select class="form-select" name="report-type" id="report-select">
+                        {% for item in balance_list %}
+                             <option value="{{ item.0 }}">{{ item.0 }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="card-body">
+                    <div class=" home-chart-height">
+                        <div id="chartx"></div>
+                        <div class="row">
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                <div class="chart-price-value">
+                                    <span>24hr {% trans 'Accumulated Profit' %}</span>
+                                    <h5>{{ currency_symbol }}{{ accumulated_profit }}</h5>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                <div class="chart-price-value">
+                                    <span>24hr {% trans 'Trading Volume' %}</span>
+                                    <h5>{{ currency_symbol }}{{ today_trade_volume }}</h5>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                <div class="chart-price-value">
+                                    <span>24hr {% trans 'Volume' %}</span>
+                                    <h5>{{ today_profit_volume }}%</h5>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                                <div class="chart-price-value">
+                                    <span>{% trans 'All Time High' %}</span>
+                                    <h5>{{ currency_symbol }}{{ all_time_high }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <!----------------- Trades Balance ------------------------------>
+        <div class="col-xxl-4 col-xl-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Trade Balances</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="pr-4 balance-widget trade-balance">
+                        <li>
+                            <h5>Futures Balance</h5>
+                            <div class="text-right">
+                                <h5>{{ currency_symbol }}{{ futures_balance }}</h5>
+                                <span>Total margin currency balance.</span>Balances
+                            </div>
+                        </li>
+                        <li>
+                            <h5>{% trans 'Equity' %}</h5>
+                            <div class="text-right">
+                                <h5>{{ currency_symbol }}{{ equity }}</h5>
+                                <span>Trade {% trans 'balance combined with' %} unrealized {% trans 'profit/loss' %}</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>{% trans 'Used' %} Margin</h5>
+                            <div class="text-right">
+                                <h5>{{ currency_symbol }}{{ used_margin }}</h5>
+                                <span>{% trans 'Total' %} margin {% trans 'amount used in' %} open positions.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>{% trans 'Free' %} Margin</h5>
+                            <div class="text-right">
+                                <h5>{{ currency_symbol }}{{ free_margin }}</h5>
+                                <span>{% trans 'Usable' %} margin {% trans 'balance' %}. {% trans 'Equal to equity minus' %}.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>Margin Level</h5>
+                            <div class="text-right">
+                                <h5>{{ margin_level }}%</h5>
+                                <span>{% trans 'Percentage ratio of equity to used' %} margin.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+       <!----------------- Position Valuation -------------------------->
+        <div class="col-xxl-4 col-xl-4">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Position Valuation</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="pr-4 balance-widget position-value">
+                        <li>
+                            <h5>Opening Cost</h5>
+                            <div class="text-right">
+                                <h5>{{ currency_symbol }}{{ opening_cost }}</h5>
+                                <span>{% trans 'Original cost of all open positions' %}.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>Current Valuation</h5>
+                            <div class="text-right">
+                                <h5>{{ currency_symbol }}{{ current_valuation }}</h5>
+                                <span>{% trans 'Paper valuation of all open positions' %}.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>{% trans 'Profit' %}</h5>
+                            <div class="text-right">
+                                <h5>{{ currency_symbol }}{{ profit }}</h5>
+                                <span>{% trans 'Paper profit of all open positions' %}..</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>{% trans 'Loss' %}</h5>
+                            <div class="text-right">
+                                <h5>{{ currency_symbol }}{{ loss }}</h5>
+                                <span>{% trans 'Paper loss of all open positions' %}.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>{% trans 'Fees' %}</h5>
+                            <div class="text-right">
+                                <h5>{{ currency_symbol }}{{ fees }}</h5>
+                                <span>{% trans 'Current Fee' %}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+       <!----------------- Spot Positions & Open Orders --------------------------------->
+        <div class="col-xxl-8 col-xl-8">
+            <div class="card">
+                <div class="card-header">
+                    <div class="settings-menu tab">
+                        <a style="cursor:pointer" class="tablinks" onclick="switchTab(event, 'Positions')" id="defaultOpen">Positions</a>
+                        <a style="cursor:pointer" class="tablinks" onclick="switchTab(event, 'OpenOrders')">Open Orders</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive transaction-table tabcontent" id="Positions">
+                        {% if spot_positions_l %}
+<!--               [sm, size, entry_price, mark_price, pnl, ROI]  -->
+                        <table class="table table-striped responsive-table" style="font-size:11px !important;">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'Symbol' %}</th>
+                                    <th>{% trans 'Size' %}</th>
+                                    <th>Entry {% trans 'Price' %}</th>
+                                    <th>Mark {% trans 'Price' %}</th>
+                                    <th>PNL(ROI%)</th>
+                                    <th>{% trans 'Status' %}</th>
+                                    <th>tp/sl</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for item in spot_positions_l %}
+                                <tr>
+                                    <td>{{ item.0 }}</td>
+                                    <td>{{ item.1 }}</td>
+                                    <td>{{ user.currency_symbol }}{{ item.2 }}</td>
+                                    <td>{{ user.currency_symbol }}{{ item.3 }}</td>
+                                    <td>{{ item.4 }}({{ item.5 }}%)</td>
+                                    <td>Filled</td>
+                                    <td>{{ item.6 }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        {% else %}
+                        No Positions
+                        {% endif %}
+                    </div>
+                    <div class="table-responsive transaction-table tabcontent" id="OpenOrders">
+                        {% if open_orders_spot %}
+                        <table style="font-size:11px !important;" class="table table-striped responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>{% trans 'Symbol' %}</th>
+                                    <th>{% trans 'Date' %}</th>
+                                    <th>{% trans 'Type' %}</th>
+                                    <th>{% trans 'Side' %}</th>
+                                    <th>{% trans 'Price' %}</th>
+                                    <th>{% trans 'Amount' %}</th>
+                                    <th>{% trans 'Filled' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for item in open_orders_spot %}
+                                <tr>
+                                    <td>{{ item.0 }}</td>
+                                    <td>{{ item.1 }}</td>
+                                    <td>{{ item.2 }}</td>
+                                    <td>{{ item.3 }}</td>
+                                    <td>{{ item.4 }}</td>
+                                    <td>{{ item.5 }}</td>
+                                    <td>{{ item.6 }}%</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        {% else %}
+                        No orders
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!----------------- Wallet Addresses  -------------------------->
+
+        <!----------------- Deposits ----------------------------------->
+        <h3>{% trans 'Financial Operations' %}</h3>
+        {% if deposit_list %}
+        <div class="col-xxl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">{% trans 'Deposit' %} </h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>{% trans 'Type' %}</th>
+                                    <th>{% trans 'Amount' %}</th>
+                                    <th>{% trans 'Date' %}</th>
+                                    <th>TxId</th>
+                                    <th>{% trans 'Address' %}</th>
+                                    <th>{% trans 'Status' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for deposit in deposit_list %}
+<!--        # [id, txid, type, amount, date, hash, status]-->
+                                <tr>
+                                    <td>{{ deposit.0 }}</td>
+                                    <td class="coin-name">
+                                        <i class="cc {{ deposit.2 }}"></i>
+                                        <span>
+                                            {% if deposit.2 == 'BTC' %}
+                                                Bitcoin
+                                            {% elif deposit.2 == 'BNB' %}
+                                                Binance Coin
+                                            {% elif deposit.2 == 'USDT' %}
+                                                Tether
+                                            {% elif deposit.2 == 'ETH' %}
+                                                Ether
+                                            {% elif deposit.2 == 'LTC' %}
+                                                Litecoin
+                                            {% elif deposit.2 == 'TRX' %}
+                                                TRON
+                                            {% elif deposit.2 == 'XRP' %}
+                                                Ripple
+                                            {% else %}
+                                                deposit.2
+                                            {% endif %}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {{ deposit.3 }}
+                                    </td>
+                                    <td>
+                                        {{ deposit.4 }}
+                                    </td>
+                                    <td>
+                                        <span class="bg-white pl-3 py-1" style="letter-spacing: 1.5px">
+                                            <input type="hidden" value="{{ deposit.1 }}">
+                                            {{ deposit.1|slice:6  }}<span style="letter-spacing:4px">...</span>
+                                            <i class="fa fa-copy px-3 text-dark" style="cursor:pointer" onclick="copyText(this)"></i>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="bg-white pl-3 py-1" style="letter-spacing: 1.5px">
+                                            <input type="hidden" value="{{ deposit.5 }}">
+                                            {{ deposit.5|slice:6  }}<span style="letter-spacing:4px">...</span>
+                                            <i class="fa fa-copy px-3 text-dark" style="cursor:pointer" onclick="copyText(this)"></i>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {% if deposit.6 == 1 %}
+                                        Completed
+                                        {% elif deposit.6 == 0 %}
+                                        Pending
+                                        {% else %}
+                                        {{ deposit.6 }}
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!----------------- Withdrawals ------------====---------------->
+
+        <div class="col-xxl-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">{% trans 'Withdrawals' %} </h4>
+                </div>
+                {% if withdrawals %}
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>{% trans 'Type' %}</th>
+                                    <th>{% trans 'Amount' %}</th>
+                                    <th>{% trans 'Date' %}</th>
+                                    <th>TxId</th>
+                                    <th>{% trans 'Address' %}</th>
+                                    <th>{% trans 'Status' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for withdrawl in withdrawals %}
+                                <tr>
+                                    <td>{{ withdrawl.withdrawal_id }}</td>
+                                    <td class="coin-name">
+                                        <i class="cc {{ withdrawl.coin }}"></i>
+                                        <span>
+                                            {% if withdrawl.coin == 'BTC' %}
+                                                Bitcoin
+                                            {% elif withdrawl.coin == 'BTC' %}
+                                            {% elif withdrawl.coin == 'LTC' %}
+                                                Litecoin
+                                            {% elif withdrawl.coin == 'ETH' %}
+                                                Ether
+                                            {% elif withdrawl.coin == 'USDT' %}
+                                                Tether
+                                            {% elif withdrawl.coin == 'BNB' %}
+                                                Binance Coin
+                                            {% elif withdrawl.coin == 'XRP' %}
+                                                Ripple
+                                            {% elif withdrawl.coin == 'TRX' %}
+                                                Tron
+                                            {% else %}
+                                                withdrawl.coin
+                                            {% endif %}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {{ withdrawl.amount }}
+                                    </td>
+                                    <td>
+                                        {{ withdrawl.applyTime }}
+                                    </td>
+                                    <td>
+                                        <span class="bg-white pl-3 py-1" style="letter-spacing: 1.5px">
+                                            <input type="hidden" value="{{ withdrawl.txId }}">
+                                            {{ withdrawl.txId|slice:6 }}<span style="letter-spacing:4px">...</span>
+                                            <i class="fa fa-copy px-3 text-dark" style="cursor:pointer" onclick="copyText(this)"></i>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="bg-white pl-3 py-1" style="letter-spacing: 1.5px">
+                                            <input type="hidden" value="{{ withdrawl.address }}">
+                                            {{ withdrawl.address|slice:6  }}<span style="letter-spacing:4px">...</span>
+                                            <i class="fa fa-copy px-3 text-dark" style="cursor:pointer" onclick="copyText(this)"></i>
+                                        </span>
+                                    <td>
+                                        {% if withdrawl.status == 1 %}
+                                        Success
+                                        {% elif withdrawl.status == 0 %}
+                                        Pending
+                                        {% else %}
+                                        {{ withdrawl.status }}
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                {% else %}
+                <div class="card-body">
+                    {% trans 'No Withdrawals' %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!----------------- Transfers --------------------======-------->
+        {% if transfer_list %}
+        <div class="col-xxl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">{% trans 'Transfers' %} </h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>{% trans 'Transfer Id' %}</th>
+                                    <th>{% trans 'Type' %}</th>
+                                    <th>{% trans 'Amount' %}</th>
+                                    <th>{% trans 'Date' %}</th>
+                                    <th>{% trans 'Status' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+        <!--            (c_id, trans_id, symbol, asset, amount, transfer_date, status)-->
+                            {% for transfer in transfer_list %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>
+                                        <span class="bg-white pl-3 py-1" style="letter-spacing: 1.5px">
+                                            <input type="hidden" value="{{ transfer.1 }}">
+                                            {{ transfer.1|slice:4  }}<span style="letter-spacing:4px">...</span>
+                                            <i class="fa fa-copy px-3 text-dark" style="cursor:pointer" onclick="copyText(this)"></i>
+                                        </span>
+                                    </td>
+                                    <td class="coin-name">
+                                        <i class="cc {{ transfer.2 }}"></i>
+                                        <span>
+                                            {{ transfer.3 }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        {{ transfer.4 }}
+                                    </td>
+                                    <td>
+                                        {{ transfer.5 }}
+                                    </td>
+                                    <td>
+                                        {{ transfer.6 }}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        </div>
+        </div>
+</div>
+
+<script>
+function copyText(icon){
+    /* Get the text field */
+    var copyText = icon.parentElement.firstElementChild;
+    var input = document.createElement('textarea');
+    input.innerHTML = copyText.value;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    icon.parentElement.focus();
+}
+
+function copyLink() {
+      /* Get the text field */
+      var copyText = document.getElementById("link");
+
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+    }
+</script>
+<script>
+function switchTab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>

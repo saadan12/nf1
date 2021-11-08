@@ -1,0 +1,77 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Qash - {% trans 'Crypto Exchange Dashboard UI Kit' %}</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <!-- Custom Stylesheet -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <div id="preloader"><i>.</i><i>.</i><i>.</i></div>
+    <div id="main-wrapper">
+        <div class="verification">
+            <div class="container h-100">
+                <div class="row justify-content-center h-100 align-items-center">
+                    <div class="col-xl-5 col-md-6">
+                        <div class="text-center mb-4">
+                            <a href="{% url 'home:intro' %}"><img width="40px" height="50px" src="{% static 'images/logo.svg' %}" alt=""></a>
+                            <h4 class="card-title mt-3">{% trans 'Confirm E-mail Address' %}</h4>
+                        </div>
+                        <div class="auth-form card">
+                            <div class="card-body">
+                                {% load i18n %}
+                                {% load account %}
+                                <form class="identity-upload">
+                                    <div class="identity-content">
+                                        <span class="icon"><i class="icofont-email"></i></span>
+                                    </div>
+                                </form>
+                                {% if confirmation %}
+                                    {% user_display confirmation.email_address.user as user_display %}
+
+                                    <p>{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user {{ user_display }}.{% endblocktrans %}</p>
+
+                                    <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+                                    {% csrf_token %}
+                                        <div class="identity-content">
+                                        <button type="submit" class="btn btn-sm btn-primary">{% trans 'Confirm' %}</button>
+                                        </div>
+                                    </form>
+                                    {% else %}
+
+                                    {% url 'account_email' as email_url %}
+
+                                    <p>{% blocktrans %}This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new e-mail confirmation request</a>.{% endblocktrans %}</p>
+
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

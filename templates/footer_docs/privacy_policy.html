@@ -1,0 +1,31 @@
+{% extends 'alt_partials/base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- main content -->
+	<main class="main">
+		<div class="container">
+			<div class="row row--grid">
+				<!-- breadcrumb -->
+				<div class="col-12">
+					<ul class="breadcrumb">
+						<li class="breadcrumb__item"><a href="index-2.html">Home</a></li>
+						<li class="breadcrumb__item breadcrumb__item--active">Privacy policy</li>
+					</ul>
+				</div>
+				<!-- end breadcrumb -->
+
+				<!-- title -->
+				<div class="col-12">
+					<div class="main__title main__title--page">
+						<h1>Privacy policy</h1>
+            {{ privacy_policy|safe }}
+					</div>
+				</div>
+				<!-- end title -->
+			</div>
+		</div>
+	</main>
+	<!-- end main content -->
+{% include 'alt_partials/_footer.html' %}
+{% endblock %}

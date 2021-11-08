@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<div class="settings-menu">
+      <a href="{% url 'settings-profile' %}">{% trans 'Profile' %}</a>
+      <a href="{% url 'settings-application' %}">{% trans 'Preferences' %}</a>
+      <a href="{% url 'settings-privacy' %}">{% trans 'Privacy' %}</a>
+      <a href="{% url 'settings-payment-method' %}">{% trans 'Payment Method' %}</a>
+<!--      <a href="{% url 'settings-security' %}">{% trans 'Security' %}</a>-->
+      <a href="{% url 'settings-activity' %}">{% trans 'Activity' %}</a>
+      <a href="{% url 'settings-api' %}">API</a>
+      <a href="{% url 'socialaccount_connections1' %}">{% trans 'Social Connections' %}</a>
+<!--      <a href="{% url 'settings-fees' %}">{% trans 'Fees' %}</a>-->
+</div>

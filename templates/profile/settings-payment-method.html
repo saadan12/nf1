@@ -1,0 +1,306 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Qash - {% trans 'Crypto Exchange Dashboard UI Kit' %}</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <!-- Custom Stylesheet -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <div id="preloader"><i>.</i><i>.</i><i>.</i></div>
+
+    <div id="main-wrapper">
+
+        <!-- START OF HEADER -->
+        {% include 'partials/_header.html' %}
+        <!-- END OF HEADER -->
+
+        <!-- START OF SIDEBAR -->
+        {% include 'partials/_sidebar.html' %}
+        <!-- END OF SIDEBAR -->
+
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="page-title">
+                            <h4>{% trans 'Payment Method' %}</h4>
+<!--                            {{ user.date_joined.date.day }} {{ user.date_joined.date.month }} {{ user.date_joined.date.year }}<br>-->
+<!--                           {% now "d m Y" %}-->
+                            {% now "SHORT_DATETIME_FORMAT"  %} - {{user.date_joined}}
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                {% include 'partials/settings_menu.html' %}
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-header px-0">
+                                                <h4 class="card-title">{% trans 'Add a payment method' %} </h4>
+                                            </div>
+                                            <div class="card-body px-0">
+<!--                                                <div class="verify-content">-->
+<!--                                                    <div class="d-flex align-items-center">-->
+<!--                                                        <span class="mr-3 icon-circle bg-primary text-white"><i class="icofont-ui-touch-phone"></i></span>-->
+<!--                                                        <div class="primary-number">-->
+<!--                                                            <p class="mb-0">PayPal</p>-->
+<!--                                                            <small>{% trans 'Account' %}: money@paypal.com</small>-->
+<!--                                                            <br>-->
+<!--                                                            <span class="text-success">{% trans 'Verified' %}</span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                    <button class=" btn btn-outline-primary">{% trans 'Manage' %}</button>-->
+<!--                                                </div>-->
+
+                                                {% if payment_methods %}
+                                                {% for payment_obj in payment_methods %}
+
+                                                    <div class="verify-content">
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="mr-3 icon-circle bg-primary text-white"><i class="icofont-email"></i></span>
+                                                            <div class="primary-number">
+                                                                <p class="mb-0">{{ payment_obj.card.brand|title }}</p>
+                                                                <small>{{ payment_obj.card.funding|title }} Card *********{{ payment_obj.card.last4 }}</small>
+                                                                <br>
+                                                                <span class="text-success">{% trans 'Verified' %}</span>
+                                                            </div>
+                                                        </div>
+                                                        <button class="btn btn-outline-primary mr-4">{% trans 'Manage' %}</button>
+                                                    </div>
+                                                <hr class="dropdown-divider my-4">
+                                                {% endfor %}
+                                                {% else %}
+                                                <p>No Payment Methods Added</p>
+                                                {% endif %}
+                                                <div class="mt-5">
+                                                  <button type="button" class="btn btn-success" data-toggle="modal"
+                                                      data-target="#addBank">{% trans 'Add New PayPal' %} </button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal"
+                                                        data-target="#addCard">{% trans 'Add New Card' %} </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addBank" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{% trans 'Add PayPal account' %}</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="verify-step-6.html" class="identity-upload">
+                        <div class="row g-3">
+                            <div class="col-xl-12">
+                                <label class="form-label">{% trans 'PayPal Address' %} </label>
+                                <input type="text" class="form-control" placeholder="money@paypal.com">
+                            </div>
+                            <div class="col-xl-12">
+                                <label class="form-label">{% trans 'Account owner fulll name' %}</label>
+                                <input type="text" class="form-control" placeholder="Alex Smith">
+                            </div>
+                            <div class="col-xl-12">
+                                <label class="form-label">{% trans 'Something else' %} </label>
+                                <input type="text" class="form-control" placeholder="stuff">
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
+                        data-target="#successBankAccount">{% trans 'Confirm' %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="successBankAccount" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{% trans 'Success' %}</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="auth-form">
+                        <div class="card-body">
+                            <form action="verify-step-2.html" class="identity-upload">
+                                <div class="identity-content">
+                                    <span class="icon"><i class="icofont-check"></i></span>
+                                    <p class="text-dark">{% trans 'Congratulation. Your PayPal added' %}</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="addCard" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addCardLabel">{% trans 'Add card' %}</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <form class="identity-upload" method="post">{% csrf_token %}
+                    <div class="modal-body">
+                        <div class="row g-3">
+                                <div class="col-xl-12">
+                                    <label class="form-label">{% trans 'Name on card' %} </label>
+                                    <input type="text" name="name" class="form-control" placeholder="Jannatul Maowa" required>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label class="form-label">{% trans 'Card number' %} </label>
+                                    <input type="text" minlength="13" maxlength="19" onkeypress="validate(event)" name="card_no" class="form-control" placeholder="5658 4258 6358 4756" required>
+                                </div>
+                                <div class="col-xl-4">
+                                    <label class="form-label">{% trans 'Expiration' %} </label>
+                                    <input type="text" onkeypress="validate(event)" minlength="5" maxlength="5" name="expiry" class="form-control" placeholder="10/22" required>
+    <!--                                    <input type="text" name="expiry_month" class="form-control" placeholder="month">-->
+                                </div>
+    <!--                            <div class="col-xl-3">-->
+    <!--                                <label class="form-label">{% trans 'Exp Date' %} </label>-->
+    <!--                                <input type="text" name="expiry_date" class="form-control" placeholder="date">-->
+    <!--                            </div>-->
+                                <div class="col-xl-4">
+                                    <label class="form-label">CVC </label>
+                                    <input type="text" onkeypress="validate(event)" minlength="3" maxlength="4" name="cvc" class="form-control" placeholder="125" required>
+                                </div>
+    <!--                            <div class="col-xl-4">-->
+    <!--                                <label class="form-label">{% trans 'Postal code' %} </label>-->
+    <!--                                <input type="text" class="form-control" placeholder="2368">-->
+    <!--                            </div>-->
+                            </div>
+                    </div>
+
+                    <div class="modal-footer">
+<!--                    <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#successCard">{% trans 'Submit' %}</button>-->
+                        <button type="submit" class="btn btn-primary">{% trans 'Submit' %}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+     <!-- Modal -->
+    <div class="modal fade" id="successCard" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        {% if stripe_message %}
+                        {% trans "Error" %}
+                        {% else %}
+                        {% trans 'Success' %}
+                        {% endif %}
+                    </h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="auth-form">
+                        <div class="card-body">
+                            <form action="verify-step-2.html" class="identity-upload">
+                                <div class="identity-content">
+                                    {% if stripe_message %}
+                                    <span class="icon">
+                                        <i class="icofont-error"></i>
+                                    </span>
+                                    <p>{{ stripe_message }}</p>
+                                    {% else %}
+                                    <span class="icon">
+                                        <i class="icofont-check"></i>
+                                    </span>
+                                    <p class="text-dark">{% trans 'Congratulation. Your card added' %}</p>
+                                    {% endif %}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+    {% if payment_added %}
+    <script>
+        $('#successCard').modal('show');
+    </script>
+    {% endif %}
+
+    <script>
+        // validate numbers for text fields
+        function validate(evt) {
+          var theEvent = evt || window.event;
+
+          // Handle paste
+          if (theEvent.type === 'paste') {
+              key = event.clipboardData.getData('text/plain');
+          } else {
+          // Handle key press
+              var key = theEvent.keyCode || theEvent.which;
+              key = String.fromCharCode(key);
+          }
+          var regex = /[0-9]|\./;
+          if( !regex.test(key) ) {
+            theEvent.returnValue = false;
+            if(theEvent.preventDefault) theEvent.preventDefault();
+          }
+        }
+
+    </script>
+    <script>
+        //Put our input DOM element into a jQuery Object
+        var $jqDate = jQuery('input[name="expiry"]');
+
+        //Bind keyup/keydown to the input
+        $jqDate.bind('keyup','keydown', function(e){
+
+          //To accomdate for backspacing, we detect which key was pressed - if backspace, do nothing:
+            if(e.which !== 8) {
+                var numChars = $jqDate.val().length;
+                if(numChars === 2 ){
+                    var thisVal = $jqDate.val();
+                    thisVal += '/';
+                    $jqDate.val(thisVal);
+                }
+          }
+        });
+    </script>
+</body>
+
+</html>

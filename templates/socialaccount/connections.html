@@ -1,0 +1,129 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Qash - {% trans 'Crypto Exchange Dashboard UI Kit' %}</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     <style>
+        .social-container {
+	margin: 20px 0;
+}
+
+.social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+}
+    </style>
+</head>
+
+<body>
+
+    <div id="preloader"><i>.</i><i>.</i><i>.</i></div>
+
+    <div id="main-wrapper">
+
+        <!-- START OF HEADER -->
+        {% include 'partials/_header.html' %}
+        <!-- END OF HEADER -->
+
+        <!-- START OF SIDEBAR -->
+        {% include 'partials/_sidebar.html' %}
+        <!-- END OF SIDEBAR -->
+
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="page-title">
+                            <h4>Add Social Connections</h4>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                {% include 'partials/settings_menu.html' %}
+                            </div>
+                            <div class="card-body">
+                                <div class="mt-2" style="overflow:hidden;">
+                                    <h4>Social Accounts</h4><br>
+                                    <div class="col-xl-12 col-md-12">
+                                        {% if form.accounts %}
+                                        <p>
+                                            {% blocktrans %}You can sign in to your account using any of the following third party accounts:{% endblocktrans %}
+                                        </p>
+                                        <form method="post" action="{% url 'socialaccount_connections1' %}">
+                                        {% csrf_token %}
+                                        {% if form.non_field_errors %}
+                                        <div id="errorMsg" class="text-danger">{{ form.non_field_errors }}</div>
+                                        {% endif %}
+                                        {% for base_account in form.accounts %}
+                                        {% with base_account.get_provider_account as account %}
+                                        <div>
+                                        <label for="id_account_{{ base_account.id }}" class="my-1">
+                                            <input id="id_account_{{ base_account.id }}" type="radio" name="account" value="{{ base_account.id }}"/>
+                                            <span class="socialaccount_provider {{ base_account.provider }} {{ account.get_brand.id }}">
+                                                <b>{{account.get_brand.name}}</b>
+
+                                            </span>
+                                            <span>({{ account }})</span>
+
+                                        </label>
+                                        </div>
+                                        {% endwith %}
+                                        {% endfor %}
+                                        <div>
+                                        <input type="submit" value="Remove" class="btn btn-sm btn-primary my-2" style="height:30px !important; padding:0 12px !important">
+                                        </div>
+                                        </form>
+                                        {% else %}
+                                        <p>{% trans 'You currently have no social network accounts connected to this account.' %}</p>
+                                        {% endif %}
+
+                                        {% if provider_list|length < 3 %}
+                                        <hr>
+                                        <h4>{% trans 'Add a 3rd Party Account' %}</h4>
+                                        <ul class="socialaccount_providers">
+                                        {% include "socialaccount/snippets/provider_list.html" with process="connect" %}
+                                        </ul>
+                                        {% include "socialaccount/snippets/login_extra.html" %}
+                                        <p style="word-spacing:1.5px;color:gray;font-style;italic !important;margin-top:15px"><b style="color:">Note:</b> You Can Connect Only One Account For Each Of Google, Facebook & Linekdin</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+

@@ -1,0 +1,152 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Qash - {% trans 'Crypto Exchange Dashboard UI Kit' %}</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+    <!-- Custom Stylesheet -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <div id="preloader"><i>.</i><i>.</i><i>.</i></div>
+
+    <div id="main-wrapper">
+
+        <!-- START OF HEADER -->
+        {% include 'partials/_header.html' %}
+        <!-- END OF HEADER -->
+
+        <!-- START OF SIDEBAR -->
+        {% include 'partials/_sidebar.html' %}
+        <!-- END OF SIDEBAR -->
+
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="page-title">
+                            <h4>{% trans 'Activity' %}</h4>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                {% include 'partials/settings_menu.html' %}
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xxl-12">
+
+                                        <div class="card">
+                                            <div class="card-header px-0">
+                                                <h4 class="card-title">{% trans 'Web Sessions Profile' %}</h4>
+
+                                                <small>{% blocktrans %}These sessions are currently signed in to your account. Sign out
+                                                    all other sessions{% endblocktrans %}</small>
+                                            </div>
+                                            <div class="card-body px-0">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>{% trans 'Signed In' %}</th>
+                                                                <th>{% trans 'Browser' %}</th>
+                                                                <th>{% trans 'IP Address' %}</th>
+                                                                <th>{% trans 'Near' %}</th>
+                                                                <th>{% trans 'Current' %}</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        {% for session in login_sessions %}
+                                                            <tr>
+                                                                <td>{{ session.signed_in }}</td>
+                                                                <td>{{ session.browser }}</td>
+                                                                <td>{{ session.ip_address }}</td>
+                                                                <td>{{ session.near }}</td>
+                                                                <td>
+                                                                    <span><i style="color:{% if session.id == current_session_id %}#000{% else %}#C8C8C8{% endif %};" class="icofont-check-alt h4"></i></span>
+                                                                    <span><i style="color:{% if session.id == current_session_id %}#C8C8C8{% else %}#000{% endif %};" class="icofont-close-line h5"></i></span>
+                                                                </td>
+                                                            </tr>
+                                                        {% endfor %}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header px-0">
+                                                <h4 class="card-title">{% trans 'Account Activity' %}</h4>
+
+                                                <small>{% trans 'Recent activity on your account' %}.</small>
+                                            </div>
+                                            <div class="card-body px-0">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>{% trans 'Action' %}</th>
+                                                            <th>{% trans 'Source' %}</th>
+                                                            <th>{% trans 'IP Address' %}</th>
+                                                            <th>{% trans 'Location' %}</th>
+                                                            <th>{% trans 'When' %}</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {% for activity in activities %}
+                                                        <tr>
+                                                            <td>{{ activity.action }}</td>
+                                                            <td>{{ activity.source }}</td>
+                                                            <td>{{ activity.ip_address }}</td>
+                                                            <td>{{ activity.location }}</td>
+                                                            <td style="color:blue;cursor:pointer;">
+                                                                {{ activity.when }}
+                                                            </td>
+                                                        </tr>
+                                                        {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="card">
+                                            <div class="card-header px-0">
+                                                <h4 class="card-title">{% trans 'Close Account' %}</h4>
+                                            </div>
+                                            <div class="card-body px-0">
+                                                <p>{% trans 'Withdraw funds and close your Qash account' %} - <span class="text-danger">this cannot be undone</span></p>
+                                                <a href="#" class="btn btn-danger">{% trans 'Close Account' %}</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

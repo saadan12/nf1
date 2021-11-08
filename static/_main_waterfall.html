@@ -1,0 +1,92 @@
+{% load static %}
+
+
+<!-- <section class="main_waterfall">
+    <div class="wf-container">
+      {% for i in rawdata %}
+        <div class="wf-box">
+            <img src="{{ i.imageLink }}">
+            <div class="content">
+                <h3>{{ i.productName }}</h3>
+                <p>{{ i.company }}</p>
+                <p>{{ i.priceSale }}</p>
+            </div>
+        </div>
+      {% endfor %}
+
+    </div>
+</section> -->
+
+
+
+
+<section class="main_waterfall section-main-holder" >
+    <div class="wf-container">
+      {% for i in rawdata %}
+      <div class="wf-box">
+        <div class="wrapper">
+          <div class="container-ad">
+            <div class="top"><img src="{{ i.imageLink }}"></div>
+            <div class="bottom">
+              <div class="left">
+                <div class="details content">
+                  <h3>{{ i.productName }}</h3>
+                  <p>{{ i.priceSale }}</p>
+                </div>
+
+              </div>
+              <!-- <div class="right">
+                <div class="done"><i class="material-icons">done</i></div>
+                <div class="details">
+                  <h1>{{ i.productName }}</h1>
+                  <p>Added to your cart</p>
+                </div>
+                <div class="remove"><i class="material-icons">clear</i></div>
+              </div> -->
+            </div>
+          </div>
+          <div class="inside">
+            <div class="icon"><i class="material-icons">info_outline</i></div>
+            <div class="contents">
+              <table>
+                <tr>
+                  <th>Width</th>
+                  <th>Height</th>
+                </tr>
+                <tr>
+                  <td>3000mm</td>
+                  <td>4000mm</td>
+                </tr>
+                <tr>
+                  <th>Something</th>
+                  <th>Something</th>
+                </tr>
+                <tr>
+                  <td>200mm</td>
+                  <td>200mm</td>
+                </tr>
+                <tr>
+                  <th>Something</th>
+                  <th>Something</th>
+                </tr>
+                <tr>
+                  <td>200mm</td>
+                  <td>200mm</td>
+                </tr>
+                <tr>
+                  <th>Something</th>
+                  <th>Something</th>
+                </tr>
+                <tr>
+                  <td>200mm</td>
+                  <td>200mm</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+  </div>
+</section>

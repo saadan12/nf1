@@ -1,0 +1,180 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+
+/* Rina-pen  https://codepen.io/rinatoptimus/pen/MbZepR*/
+
+.b-rolling-caption-rina-pen {
+  background-color: #44b6af;
+  color: #fff;
+  /* font-family: Poppins, sans-serif; */
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 28px;
+  height: 28px;
+  /* margin-bottom: 4px; */
+}
+
+.b-rolling-caption-rina-pen .b-rolling-caption__content-rina-pen {
+  position: relative;
+  left: 0;
+  width: 5000px;
+}
+
+.b-rolling-caption-rina-pen .b-rolling-caption__wrap-rina-pen {
+  display: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.b-rolling-caption-rina-pen .b-rolling-caption__title-rina-pen {
+  padding-left: 5px;
+  color: #949494;
+}
+
+
+/* VIDEO PLAYER LIGHTBOX PEN
+https://codepen.io/darcyvoutt/pen/MaamWg */
+
+
+
+.lightbox {
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: scroll;
+  position: fixed;
+  display: none;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+.lightbox-container {
+  position: relative;
+  max-width: 960px;
+  margin: 7% auto;
+  display: block;
+  padding: 0 3%;
+  height: auto;
+  z-index: 10;
+}
+@media screen and (max-width: 768px) {
+  .lightbox-container {
+    margin-top: 10%;
+  }
+}
+@media screen and (max-width: 414px) {
+  .lightbox-container {
+    margin-top: 13%;
+  }
+}
+.lightbox-content {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+.lightbox-close {
+  text-transform: uppercase;
+  background: transparent;
+  position: absolute;
+  font-weight: 300;
+  font-size: 12px;
+  display: block;
+  border: none;
+  color: white;
+  top: -22px;
+  right: 3%;
+}
+.video-container {
+  padding-bottom: 56.25%;
+  position: relative;
+  padding-top: 30px;
+  overflow: hidden;
+  height: 0;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+/* IGNORE FORM THIS POINT ON */
+
+
+#playme {
+  background: linear-gradient(140deg, #575bde 25%, #393ed8 100%);
+  /* text-transform: uppercase; */
+  /* font-weight: 300; */
+  border: none;
+  color: white;
+  /* padding: 10px 15px; */
+  display: inline-block;
+  /* font-size: 14px; */
+  margin: 0;
+}
+
+
+
+
+
+/* Button Video Player https://codepen.io/JacobLett/pen/zEJwpN*/
+/* <div class="container-jacob-pen">
+
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary video-btn-jacob-pen" data-toggle="modal"
+    data-src="https://www.youtube.com/embed/Jfrjeg26Cwk" data-target="#myModal-jacob-pen">
+    Play Video 1
+  </button>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal-jacob-pen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+
+            <div class="modal-body-jacob-pen">
+
+              <button type="button" class="close-jacob-pen" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <!-- 16:9 aspect ratio -->
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="" id="video-jacob-pen"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+  </div> */
+/*
+
+.modal-dialog-jacob-pen {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.modal-body-jacob-pen {
+  position: relative;
+  padding: 0px;
+  z-index: 999;
+}
+.close-jacob-pen {
+  position: absolute;
+  right: -30px;
+  top: 0;
+  z-index: 999;
+  font-size: 2rem;
+  font-weight: normal;
+  color: #fff;
+  opacity: 1;
+} */

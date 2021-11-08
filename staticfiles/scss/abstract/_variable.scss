@@ -1,0 +1,66 @@
+//to ignore cli warning about deprecated mixin
+$enable-deprecation-messages: false;
+$ignore-warning             : true;
+
+// stylelint-disable-next-line scss/dollar-variable-default
+$primary   : #556ee6;
+$secondary : #74788d !default;
+$success   : #34c38f !default;
+$info      : #50a5f1 !default;
+$warning   : #f1b44c !default;
+$danger    : #f46a6a !default;
+$light     : #eff2f7 !default;
+$dark      : #343a40;
+
+// Body
+$body-bg                : #f8f8fb;
+$body-color             :#495057;
+// Typography
+$font-family-base       : 'Poppins', sans-serif;
+$headings-font-weight   : 500;
+// $headings-font-family:        $fm;
+$font-size-base         : .8125rem !default;
+$font-weight-base       : 400 !default;
+// $line-height-base    : 1.6;
+$h1-font-size           : 2.25rem;
+$h2-font-size           : 1.875rem;
+$h3-font-size           : 1.5rem;
+$h4-font-size           : 1.125rem;
+$h5-font-size           : 1rem;
+$h6-font-size           : 0.875rem;
+//
+// Color system
+//
+$white                  : #fff !default;
+$black                  : #000 !default;
+$blue                   : #5e72e4;
+$indigo                 : #6610f2 !default;
+$purple                 : #6f42c1 !default;
+$pink                   : #e83e8c !default;
+$red                    : #EE3232;
+$orange                 : #fd7e14 !default;
+$yellow                 : #FFFA6F;
+$green                  : #297F00;
+$teal                   : #20c997 !default;
+$cyan                   : #3065D0;
+$grays                  : () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+
+// $muted  : #666666;
+$text-muted: #AEAED5;
+
+$theme-colors        : () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors        : map-merge(("primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark), $theme-colors);
+// $base-font-size   : 0.8125rem !default;
+$heading-primary-size: 1.8rem;
+$sub-heading-size    : 1.6rem !default;
+$grid-gutter-width   : 30px;
+$dropdown-lik-color  : $body-color;
+$border-color        : #F1F1F1;
+$headings-color      :#495057 !default;
+$table-striped-bg    : $body-bg;
+$border-radius:               .25rem !default;
+
+
+

@@ -1,0 +1,167 @@
+{% load static %}
+
+<!-- <section class="main_waterfall section-main-holder" >
+    <div class="wf-container">
+      {% for i in obj_home %}
+      <div class="wf-box">
+        <div class="wrapper">
+          <div class="container-ad">
+            <div class="top"><img src="{{ i.image_url }}"></div>
+            <div class="bottom">
+              <div class="left">
+                <div class="details content">
+                  <h3>{{ i.productName }}</h3>
+                  <p>{{ i.priceSale }}</p>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {% endfor %}
+  </div>
+</section> -->
+
+
+<!-- {% for post in object_list %}
+<div class="col-md-12 infinite-item">
+  {% if post.asset_image %}
+  <img class="img-fluid" src="{{ post.asset_image.url }}">
+  {% else %}
+  <img class="img-fluid" src="https://picsum.photos/700">
+  {% endif %}
+  <a class="text-dark" href="#">
+        <div class="card mb-4 box-shadow">
+          <div class="card-body">
+            <a href="{% url 'home:article_detail' asset_slug=post.asset_slug %}"><h2 style="font-size:18px;font-weight:bold;min-height:42px;">{{ post.asset_name }}</h2></a>
+            <div class="d-flex justify-content-between align-items-center">
+            <a href="{% url 'home:category' post.category|slugify %}">{{ post.category}}</a>
+            {{ post.author.first_name }}
+            {{ post.author.last_name }} - {{ post.post_date}}
+            {% if user.is_authenticated %}
+              {% if user.id == post.author.id %}
+              <small>
+                <a href="{% url 'home:update_post' asset_slug=post.asset_slug %}">(Edit)</a>
+                <a href="{% url 'home:delete_post' asset_slug=post.asset_slug %}">(Delete)</a>
+              </small>
+              {% endif %}
+            {% endif %}
+            <br/>
+          {{ post.asset_description|slice:":200"|safe}}
+          </div>
+      </div>
+    </div>
+  </a>
+</div>
+{% endfor %} -->
+<div class="content">
+    <!-- <h1>Choose your gift</h1> -->
+    <div class="btn-group" style="display:none">
+        <button id='add-btn' class="btn btn-primary" style='display:none;'>Add Box</button>
+        <button id='scaleup-btn' class="btn btn-primary">Scale Up</button>
+        <button id='scaledown-btn' class="btn btn-primary">Scale Down</button>
+    </div>
+</div>
+<div class="row--grid">
+  <section>
+      <div class="wf-container">
+        {% for post in object_list %}
+        <div class="">
+          <div class="card wf-box">
+            <div class="wrapper">
+              <div class="container-ad">
+              <a href="{% url 'home:article_detail' asset_slug=post.asset_slug %}" target="_blank" class="card__cover">
+                {% if post.asset_image %}
+                <img class="img-fluid" src="{{ post.asset_image.url }}">
+                {% else %}
+                <img class="img-fluid" src="https://picsum.photos/700">
+                {% endif %}
+              </a>
+              <h3 class="card__title"><a href="{% url 'home:article_detail' asset_slug=post.asset_slug %}">{{ post.asset_name }}</a></h3>
+
+
+              <div class="card__author">
+
+                {% if post.author.image %}
+                <img src="{{ post.author.image.url }}" alt="">
+                {% else %}
+                <img src="{% static 'alt_img/avatars/everave_profile.png'%}" alt="">
+                {% endif %}
+                <a target="_blank" href="{% url 'users:show_profile_page' username=post.author.username %}">@{{ post.author.username }}</a>
+              </div>
+              <div class="card__info">
+                  <div class="card__price">
+                    <span>{{ post.asset_price }} ETH</span>
+                  </div>
+                  <button class="card__likes" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.16,5A6.29,6.29,0,0,0,12,4.36a6.27,6.27,0,0,0-8.16,9.48l6.21,6.22a2.78,2.78,0,0,0,3.9,0l6.21-6.22A6.27,6.27,0,0,0,20.16,5Zm-1.41,7.46-6.21,6.21a.76.76,0,0,1-1.08,0L5.25,12.43a4.29,4.29,0,0,1,0-6,4.27,4.27,0,0,1,6,0,1,1,0,0,0,1.42,0,4.27,4.27,0,0,1,6,0A4.29,4.29,0,0,1,18.75,12.43Z"/></svg>
+                    <span>{{post.all_likes}}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% for i in obj_home %}
+        {% if i.image_url %}
+        <div class="">
+          <div class="card wf-box">
+            <div class="wrapper">
+              <div class="container-ad">
+              <a href="{% url 'home:article_detail_os' asset_token_id=i.token_id contract_address=i.asset_contract.address %}" target="_blank" class="card__cover">
+                {% if i.image_url == None %}
+                <img src="{{ i.asset_contract.image_url }}" alt="">
+                {% else %}
+                <img src="{{ i.image_url }}" alt="">
+                {% endif %}
+              </a>
+              <h3 class="card__title"><a href="{{i.permalink}}">{{ i.name }}</a></h3>
+
+              <div class="card__info">
+                <div class="card__price">
+                  <span>{{ i.asset_contract.seller_fee_basis_points }}</span>
+                </div>
+
+                <button class="card__likes" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.16,5A6.29,6.29,0,0,0,12,4.36a6.27,6.27,0,0,0-8.16,9.48l6.21,6.22a2.78,2.78,0,0,0,3.9,0l6.21-6.22A6.27,6.27,0,0,0,20.16,5Zm-1.41,7.46-6.21,6.21a.76.76,0,0,1-1.08,0L5.25,12.43a4.29,4.29,0,0,1,0-6,4.27,4.27,0,0,1,6,0,1,1,0,0,0,1.42,0,4.27,4.27,0,0,1,6,0A4.29,4.29,0,0,1,18.75,12.43Z"/></svg>
+                  <span></span>
+                </button>
+              </div>
+              <!-- <div class="card__author">
+                <img src="{{ i.owner.profile_img_url }}" alt="">
+                <a target="_blank" href="author.html">@{{ i.creator.user.username }}</a>
+              </div> -->
+              <!-- <div class="card__info">
+                <div class="card__price">
+                  <span>Reserve price</span>
+                  <span>{{ i.asset_contract.seller_fee_basis_points }} ETH</span>
+                </div>
+
+              <button class="card__likes" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.16,5A6.29,6.29,0,0,0,12,4.36a6.27,6.27,0,0,0-8.16,9.48l6.21,6.22a2.78,2.78,0,0,0,3.9,0l6.21-6.22A6.27,6.27,0,0,0,20.16,5Zm-1.41,7.46-6.21,6.21a.76.76,0,0,1-1.08,0L5.25,12.43a4.29,4.29,0,0,1,0-6,4.27,4.27,0,0,1,6,0,1,1,0,0,0,1.42,0,4.27,4.27,0,0,1,6,0A4.29,4.29,0,0,1,18.75,12.43Z"/></svg>
+                <span>189</span>
+              </button>
+              </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+
+
+</div>
+<!-- paginator -->
+
+<!-- end paginator -->

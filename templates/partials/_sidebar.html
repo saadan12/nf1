@@ -1,0 +1,12 @@
+{% load static %}
+<div class="sidebar">
+    <div class="brand-logo">
+        <a href="{% url 'trade' %}">
+            <img src="{% static 'images/logo.svg' %}" alt="website logo">
+<!--            <img src="{% static 'icons/Ask Glimcy.svg' %}"  alt="" style="background:purple;">-->
+        </a>
+    </div>
+
+    {% include 'partials/_main_menu.html' %}
+
+</div>

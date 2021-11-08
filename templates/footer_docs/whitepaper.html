@@ -1,0 +1,121 @@
+{% load static %}
+{% load i18n %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Glimcy</title>
+  <meta charset="utf-8">
+  <meta name="description" content="A minimal and responsive HTML5 landing page built on lightweight, clean and customizable code.">
+  <meta name="viewport" content="width=device-width">
+  <link rel="apple-touch-icon-precomposed" href="{% static 'media/favicon.png' %}">
+  <link rel="icon" href="{% static 'media/favicon.png' %}">
+  <link rel="mask-icon" href="{% static 'media/favicon.svg' %}" color="rgb(36,38,58)">
+  <link rel="shortcut icon" href="{% static 'media/favicon.png' %}">
+  <link rel="stylesheet" href="{% static 'home/home.css' %}">
+  <link rel="stylesheet" href="{% static 'home/eternal-styles.css' %}">
+  <!-- <link rel="stylesheet" href="css/cookies-styles.css"> -->
+  <!-- CSS only -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
+</head>
+<body class="page page-about preload">
+
+  {% include 'footer_docs/partials/_header.html' %}
+
+  <main>
+
+    <section class="bg-gradient-light center padding padding-top">
+      <div class="max-width-m">
+        <p class="muted">Glimcy</p>
+        <h1 class="hero">White Paper</h1>
+      </div>
+    </section>
+
+    <section class="bg-gradient-light padding">
+      <div class="max-width-l">
+        <div class="row reduce-spacing">
+          <div class="col-owne-half">
+            <p class="paragraph serif">
+
+<strong>{% trans 'Introduction' %}</strong>
+<br>
+<br>
+{% blocktrans %}Most projects never make it or need too much time and the hype is gone.{% endblocktrans %}
+{% blocktrans %} There are very few crypto projects with a working product and many projects are simply fraudulent with no other vision than to collect funds and then disappear.{% endblocktrans %}
+{% blocktrans %} They never intended to build anything. How is Glimcy different?{% endblocktrans %}
+{% blocktrans %}The founders have spent their own savings to build the platform which will become the ultimate easy to work solution.{% endblocktrans %}
+{% blocktrans %}Glimcy is different our values are team play, honesty, and fairness and the most important now is the willingness to help people to make better decisions{% endblocktrans %}!
+<br>
+<br>
+{% blocktrans %}Glimcy speaks to another tremendous jump forward{% endblocktrans %};
+{% blocktrans %}it offers proprietors both the benefits of existing cryptocurrency utilization and innovation,{% endblocktrans %}
+{% blocktrans %} as well as a curious opportunity to be an early adopter of a conceivably altogether troublesome modern innovation.{% endblocktrans %}
+{% blocktrans %}Where already cryptocurrency utilization has been nearly completely the space of examiners and the tech-savvy,{% endblocktrans %}
+{% blocktrans %} Glimcy is set to end up the primary computerized dashboard to enter common utilization due to its groundbreaking ease-of-use for the standard portable user{% endblocktrans %}.
+</p>
+<br>
+<br>
+<br>
+<p class="paragraph serif">
+<strong>{% trans 'What is Glimcy about' %}?</strong>
+<br>
+<br>
+{% blocktrans %}Glimcy is a service designed specifically for those traders who lack the detailed analytics of their trades in order to make more deep valued decisions. {% endblocktrans %}
+{% blocktrans %}Glimcy allows you to look at your trades at any small or big angle. {% endblocktrans %}
+{% blocktrans %}Moreover, it will allow you to take full control over your trades with an in-depth analysis breaking down into multiple perspectives that you can analyze. {% endblocktrans %}
+{% blocktrans %}The cryptocurrency showcase, once so clearly ruled by Bitcoin,{% endblocktrans %}
+{% blocktrans %}has gotten to be broken and catalyzed by the presentation of modern considering and unused innovation.{% endblocktrans %}
+{% blocktrans %}The service of a basic plan consists of two main features,{% endblocktrans %}
+{% blocktrans %}the first one is automated AI technical indicators advancements based on AI and classical technical analysis{% endblocktrans %}.
+</p>
+<br>
+<br>
+<br>
+<p class="paragraph serif">
+<strong>{% trans 'Privacy' %}</strong>
+<br>
+<br>
+{% blocktrans %}Nobody ever receives access to any personal data of any user apart from the Support Team that is 24/7 available to help you. {% endblocktrans %}
+{% blocktrans %}Personal data usage range only limits to a very basic level,{% endblocktrans %}
+{% blocktrans %}personal data storage strictly complies with the GDPR and can be withdrawn by users at any point in time{% endblocktrans %}.
+</p>
+<br>
+<br>
+<br>
+<p class="paragraph serif">
+<strong>{% trans 'Epilogue' %}</strong>
+<br>
+<br>
+{% blocktrans %}An epilogue on our own behalf: We are aware that our vision has the potential to shake the current status quo,{% endblocktrans %}
+{% blocktrans %} bring about a paradigm shift and herald a new era of trading.{% endblocktrans %}
+{% blocktrans %} We are working with full vigor to make this vision reality. {% endblocktrans %}
+{% blocktrans %}Nevertheless, as a start-up, we are not immune to possible changes. We can not predict events,{% endblocktrans %}
+{% blocktrans %}such as legal changes or financial and technical specifications, which are about to happen. {% endblocktrans %}
+{% blocktrans %}We do our best to implement everything as described in this whitepaper. {% endblocktrans %}
+{% blocktrans %}However, we reserve the right to make certain adjustments if necessary. {% endblocktrans %}
+{% blocktrans %}These possible adjustments will always be made in the interests of the community, the platform, and current jurisprudence{% endblocktrans %}.
+<br>
+<br>
+{% trans 'Thank you for your understanding' %}.
+</p>
+</div>
+         <!--  <div class="col-one-half">
+            <p class="paragraph serif">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+            <p class="paragraph serif">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+          </div> -->
+        </div>
+        
+      </div>
+    </section>
+
+    
+
+  </main>
+
+  {% include 'footer_docs/partials/_footer.html' %}
+
+  <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>

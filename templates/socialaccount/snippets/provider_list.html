@@ -1,0 +1,15 @@
+{% load socialaccount %}
+
+{% get_providers as socialaccount_providers %}
+
+{% for provider in socialaccount_providers %}
+{% if provider.id not in provider_list %}
+<li>
+  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}" style="font-size:16px"
+     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+      {{provider.name}}
+  </a>
+</li>
+{% endif %}
+{% endfor %}
+

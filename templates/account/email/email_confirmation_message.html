@@ -1,0 +1,182 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        @media screen {
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+            }
+
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 700;
+                src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+            }
+
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 400;
+                src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+            }
+
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 700;
+                src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+            }
+        }
+
+        /* CLIENT-SPECIFIC STYLES */
+        body,
+        table,
+        td,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* RESET STYLES */
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        body {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* MOBILE STYLES */
+        @media screen and (max-width:600px) {
+            h1 {
+                font-size: 32px !important;
+                line-height: 32px !important;
+            }
+        }
+
+        /* ANDROID CENTER FIX */
+        div[style*="margin: 16px 0;"] {
+            margin: 0 !important;
+        }
+    </style>
+</head>
+
+<body style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
+    <!-- HIDDEN PREHEADER TEXT -->
+    <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+        {% trans "We're thrilled to have you here! Get ready to dive into your new account" %}. </div>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!-- LOGO -->
+        <tr>
+            <td bgcolor="#FFA73B" align="center">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <tr>
+                        <td align="center" valign="top" style="padding: 40px 10px 40px 10px;"> </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#FFA73B" align="center" style="padding: 0px 10px 0px 10px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <tr>
+                        <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
+                            <h1 style="font-size: 48px; font-weight: 400; margin: 2;">{% trans 'Change Email' %}</h1> <img src="data:image/jpeg;base64,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" width="125" height="120" style="display: block; border: 0px;" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <tr>
+                        <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                            <p style="margin: 0;">{% trans 'Want to reset the email for' %} Glimcy?. {% trans 'Just click the button below' %}.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#ffffff" align="left">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 60px 30px;">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="center" style="border-radius: 3px;" bgcolor="#FFA73B"><a href="{{ activate_url }}" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFA73B; display: inline-block;">{% trans 'Confirm Email' %}</a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr> <!-- COPY -->
+                    <tr>
+                        <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                            <p style="margin: 0;">{% trans "If that doesn't work, copy and paste the following link in your browser" %}:</p>
+                        </td>
+                    </tr> <!-- COPY -->
+                    <tr>
+                        <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                            <p style="margin: 0;"><a href="{{ activate_url }}" target="_blank" style="color: #FFA73B;">{{ activate_url }}</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                            <p style="margin: 0;">{% trans 'Thanks for using' %} Glimcy</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14.5px; line-height: 16px;font-style:italic;">
+                            <b>{% trans 'Note' %}: </b> {% trans "You're receiving this e-mail because a user has given your e-mail address to register an account on Glimcy. If you didn't Signup just ignore this email" %}.
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

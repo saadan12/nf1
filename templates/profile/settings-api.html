@@ -1,0 +1,207 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Qash - {% trans 'Crypto Exchange Dashboard UI Kit' %}</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <div id="preloader"><i>.</i><i>.</i><i>.</i></div>
+
+    <div id="main-wrapper">
+
+        <!-- START OF HEADER -->
+        {% include 'partials/_header.html' %}
+        <!-- END OF HEADER -->
+
+        <!-- START OF SIDEBAR -->
+        {% include 'partials/_sidebar.html' %}
+        <!-- END OF SIDEBAR -->
+
+        <div class="content-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="page-title">
+                            <h4>API</h4>
+
+<!--                            <h3><i class="cc BTC"></i></h3>-->
+<!--                            <i class="OKB"></i>-->
+
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                 {% include 'partials/settings_menu.html' %}
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xxl-12">
+                                        <div class="card">
+                                            <div class="card-header px-0">
+                                                <h4 class="card-title">{% trans 'Add API Keys' %}</h4>
+
+
+                                            </div>
+                                            <div class="card-body px-0">
+                                                <form action="{% url 'add_keys' %}" method="post">{% csrf_token %}
+                                                    <div class="row g-3">
+                                                        <div class="col-xl-4 col-md-4">
+                                                            <label class="form-label">{% trans 'Public Key' %}</label>
+                                                            <input required type="password" name="public_key" class="form-control"
+                                                                placeholder="Enter Public Key">
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-4">
+                                                            <label class="form-label">{% trans 'Secret Key' %}</label>
+                                                            <input required type="password" name="secret_key" class="form-control"
+                                                                placeholder="Enter Secret Key">
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-4">
+                                                            <label class="form-label">{% trans 'Select Exchange' %}</label>
+                                                            <select required name="exchange" id="" class="form-control">
+                                                                <option value="Binance">{% trans 'Binance' %}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            {% if msg %}
+                                                                <span style="color:red;font-weight:normal;font-size:14px;">{% blocktrans %}{{ msg }}{% endblocktrans %}</span>
+                                                            {% endif %}
+                                                            <br>
+                                                            <button class="btn btn-primary" type="submit">{% trans 'Add API Keys' %}</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <div class="card">
+                                            <div class="card-header px-0">
+                                                <h4 class="card-title">{% trans 'Your API Keys' %}</h4>
+                                            </div>
+                                            <div class="card-body px-0">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>{% trans 'Public Key' %}</th>
+                                                                <th>{% trans 'Secret Key' %}</th>
+                                                                <th>{% trans 'Exchange' %}</th>
+<!--                                                                <th>Status</th>-->
+                                                                <th>{% trans 'Action' %}</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        {% if key_objects %}
+                                                        {% for item in key_objects %}
+                                                            <tr>
+                                                                <td>
+                                                                     <span style="letter-spacing: 1.5px;background:#F0FFF0;padding:4px">
+                                                                        <input type="hidden" value="{{ item.public_key }}">
+                                                                        {{ item.public_key|slice:15 }}<span style="letter-spacing:4px">...</span>
+                                                                        <i class="fa fa-copy px-3 text-dark" style="cursor:pointer" onclick="copyText(this)"></i>
+                                                                     </span>
+                                                                </td>
+                                                                <td>
+                                                                    <span style="letter-spacing: 1.5px;background:#F0FFF0;padding:4px">
+                                                                        <input type="hidden" value="{{ item.secret_key }}">
+                                                                        ******************
+                                                                        <i class="fa fa-copy px-3 text-dark" style="cursor:pointer" onclick="copyText(this)"></i>
+                                                                     </span>
+                                                                </td>
+                                                                <td>{{ item.exchange }}</td>
+<!--                                                                <td>-->
+<!--                                                                    <div class="form-check form-switch">-->
+<!--                                                                        <input class="form-check-input" type="checkbox"-->
+<!--                                                                            checked>-->
+<!--                                                                    </div>-->
+<!--                                                                </td>-->
+                                                                <td>
+                                                                    <span style="cursor:pointer;" data-toggle="modal" data-target="#deleteKey{{ item.id }}">
+                                                                        <i class="icofont-ui-delete"></i>
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                        {% endfor %}
+                                                        {% else %}
+                                                        <tr>
+                                                            <td colspan="5" style="color:red;">
+                                                                {% trans 'No API Keys Added' %}
+                                                            </td>
+                                                        </tr>
+                                                        {% endif %}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {% for item in key_objects %}
+    <div class="modal fade" id="deleteKey{{ item.id }}" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="padding-left: 15px;">{% trans 'Delete API Keys?' %}</h4>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="verify-step-6.html" class="identity-upload">
+                        <div class="row" style="padding-left: 15px;">
+                            <h4>{% trans 'Are you sure you want to permanently delete these API keys' %}?</h4>
+                            <p style="color:;margin-top:15px;"><b style="color:red;">{% trans 'Warning' %}: </b>{% trans 'The action cannot be reverted once you delete the keys' %}. </p>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <form action="{% url 'delete_api_keys' %}" method="post">{% csrf_token %}
+                        <input type="hidden" name="id" value="{{ item.id }}">
+                        <button type="submit" class="btn btn-primary">{% trans 'Delete' %}</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+        function copyText(icon){
+    /* Get the text field */
+    var copyText = icon.parentElement.firstElementChild;
+    var input = document.createElement('textarea');
+    input.innerHTML = copyText.value;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    icon.parentElement.focus();
+}
+    </script>
+</body>
+
+</html>

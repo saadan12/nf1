@@ -1,0 +1,30 @@
+button,
+.btn {
+    color      : #fff;
+    padding    : 12px 20px;
+    font-weight: 500;
+
+    &:hover,
+    &:focus,
+    &:active {
+        // background: $white;
+        color: #fff;
+    }
+
+}
+
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-success,
+.btn-outline-info,
+.btn-outline-warning,
+.btn-outline-danger,
+.btn-outline-light {
+    color: $dark;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $white;
+    }
+}

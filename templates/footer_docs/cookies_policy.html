@@ -1,0 +1,40 @@
+{% load static %}
+{% load i18n %}
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Glimcy</title>
+  <meta charset="utf-8">
+  <meta name="description" content="A minimal and responsive HTML5 landing page built on lightweight, clean and customizable code.">
+  <meta name="viewport" content="width=device-width">
+  <link rel="apple-touch-icon-precomposed" href="{% static 'media/favicon.png' %}">
+  <link rel="icon" href="{% static 'media/favicon.png' %}">
+  <link rel="mask-icon" href="{% static 'media/favicon.svg' %}" color="rgb(36,38,58)">
+  <link rel="shortcut icon" href="{% static 'media/favicon.png' %}">
+  <link rel="stylesheet" href="{% static 'home/home.css' %}">
+  <link rel="stylesheet" href="{% static 'home/eternal-styles.css' %}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
+
+</head>
+<body class="page page-about preload">
+
+   {% include 'footer_docs/partials/_header.html' %}
+
+    <main>
+        <section class="bg-gradient-light center padding padding-top">
+          <div class="max-width-m">
+            <p class="muted">We Use Cookies.</p>
+            <h1 class="hero">Read Our Cookies Policy</h1>
+          </div>
+        </section>
+        <section class="bg-gradient-light padding">
+                {{ cookies_policy|safe }}
+        </section>
+    </main>
+
+   {% include 'footer_docs/partials/_footer.html' %}
+
+   <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>

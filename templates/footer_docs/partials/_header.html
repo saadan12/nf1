@@ -1,0 +1,26 @@
+{% load static %}
+{% load i18n %}
+<header class="header-main">
+    <nav>
+      <a href="/" class="logo brand-logo" rel="home">
+        <img src="{% static 'images/logo.svg' %}" alt="website logo">
+        <span>Glimcy</span>
+      </a>
+      <div class="nav-toggle" style="font-size:25px;color:"></div>
+      <ul class="inline">
+        <!-- <li><a href="index.html" class="active">Home</a></li> -->
+        <!-- <li><a href="pricing.html">Pricing</a></li> -->
+        <li><a href="{% url 'white_paper' %}" style="text-decoration: none !important;">WhitePaper</a></li>
+        <li><a href="{% url 'faq' %}" style="text-decoration: none !important;">FAQ</a></li>
+        <li><a href="{% url 'privacy_policy' %}" style="text-decoration: none !important;">Privacy Policy</a></li>
+        <li><a href="{% url 'cookies_policy' %}" style="text-decoration: none !important;">Cookies Policy</a></li>
+
+
+      </ul>
+    {% if not request.user.is_authenticated %}
+      <ul class="inline right">
+        <li><a href="{% url 'account_login' %}" class="button button-secondary button-m full-width-tablet" role="button" style="text-decoration: none !important;">{% trans 'Start' %}</a></li>
+      </ul>
+    {% endif %}
+    </nav>
+  </header>
