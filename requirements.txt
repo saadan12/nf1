@@ -26,7 +26,7 @@ charset-normalizer==2.0.3
 cheroot==8.5.2
 clear-cache==1.0.0
 click==8.0.1
-
+cms==0.0.2
 colorama==0.4.4
 configparser==5.0.2
 coverage==5.5
