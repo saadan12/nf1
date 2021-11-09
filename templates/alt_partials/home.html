@@ -24,7 +24,7 @@
         {% for post in object_list %}
         <div class="col-md-12 infinite-item">
           {% if post.asset_image %}
-          <img class="img-fluid" src="{{ post.asset_image.url }}">
+          <img class="img-fluid" src="{{post.asset_image.url}}">
           {% else %}
           <img class="img-fluid" src="https://picsum.photos/700">
           {% endif %}
@@ -33,7 +33,7 @@
                   <div class="card-body">
                     <a href="{% url 'home:article_detail' asset_slug=post.asset_slug %}"><h2 style="font-size:18px;font-weight:bold;min-height:42px;">{{ post.asset_name }}</h2></a>
                     <div class="d-flex justify-content-between align-items-center">
-                    <a href="{% url 'home:category' post.category|slugify %}">{{ post.category}}</a>
+                    <a href="{% url 'home:category' post.category|slugify %}">{{post.category}}</a>
                     {{ post.author.first_name }}
                     {{ post.author.last_name }} - {{ post.post_date}}
                     {% if user.is_authenticated %}
@@ -45,7 +45,7 @@
                       {% endif %}
                     {% endif %}
                     <br/>
-                  {{ post.asset_description|slice:":200"|safe}}
+                  {{post.asset_description|slice:":200"|safe}}
                   </div>
               </div>
             </div>
@@ -72,7 +72,7 @@
 </div>
 </main>
 
-<script src="{% static 'alt_js/jquery.waypoints.min.js' %}"></script>
+<!-- <script src="{% static 'alt_js/jquery.waypoints.min.js' %}"></script>
 <script src="{% static 'alt_js/infinite.min.js' %}"></script>
 <script>
     var infinite = new Waypoint.Infinite({
@@ -88,5 +88,5 @@
         }
 
     });
-</script>
+</script> -->
 {% endblock %}
