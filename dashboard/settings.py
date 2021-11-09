@@ -33,7 +33,7 @@ SECRET_KEY = 'v589_%ir&upblwhrusem7c*(jhpf+y@gd(k+(j78f$+#3ke50h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG=True
-ALLOWED_HOSTS = ['192.168.10.82', '192.168.10.83','192.168.10.183', '192.168.0.105', '192.168.0.103', '127.0.0.1', 'localhost', 'glimcy-test.herokuapp.com',
+ALLOWED_HOSTS = ['192.168.10.82', 'nftion-test.herokuapp.com','192.168.10.183', '192.168.0.105', '192.168.0.103', '127.0.0.1', 'localhost', 'glimcy-test.herokuapp.com',
                  'nftion-test2.herokuapp.com', 'glimcy.herokuapp.com', 'glimcy.com', "192.168.10.29", "192.168.10.255"]
 
 # Application definition
