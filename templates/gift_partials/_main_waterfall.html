@@ -58,6 +58,15 @@
   </a>
 </div>
 {% endfor %} -->
+<style>
+  @media only screen and (max-width: 600px) {
+  .wf-box {
+     margin-left: 25px;
+     margin-right: 25px;
+  }
+   
+}
+</style>
 <div class="content">
     <!-- <h1>Choose your gift</h1> -->
     <div class="btn-group" style="display:none">
@@ -71,14 +80,14 @@
       <div class="wf-container">
         {% for post in object_list %}
         <div class="">
-          <div class="card wf-box">
+          <div class="card wf-box " >
             <div class="wrapper">
               <div class="container-ad">
               <a href="{% url 'home:article_detail' asset_slug=post.asset_slug %}" target="_blank" class="card__cover">
                 {% if post.asset_image %}
                 <img class="img-fluid" src="{{ post.asset_image.url }}">
                 {% else %}
-                <img class="img-fluid" src="https://picsum.photos/700">
+                <img class="img-fluid" src="http://picsum.photos/700">
                 {% endif %}
               </a>
               <h3 class="card__title"><a href="{% url 'home:article_detail' asset_slug=post.asset_slug %}">{{ post.asset_name }}</a></h3>
@@ -112,7 +121,7 @@
         {% for i in obj_home %}
         {% if i.image_url %}
         <div class="">
-          <div class="card wf-box">
+          <div class="card wf-box " >
             <div class="wrapper">
               <div class="container-ad">
               <a href="{% url 'home:article_detail_os' asset_token_id=i.token_id contract_address=i.asset_contract.address %}" target="_blank" class="card__cover">
