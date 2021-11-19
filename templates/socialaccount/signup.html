@@ -23,19 +23,23 @@
                 <div class="row justify-content-center h-100 align-items-center">
                     <div class="col-xl-5 col-md-6">
                         <div class="mini-logo text-center mb-4">
-                            <a href="{% url 'intro' %}"><img src="{% static 'images/logo.png' %}" alt=""></a>
+                             
                             <h4 class="card-title mt-3">Sign Up</h4>
                         </div>
                         <div class="auth-form card">
                             <div class="card-body">
                                 {% load i18n %}
                                 <form class="identity-upload">
-                                    <div class="identity-content">
-                                        <span class="icon"><i class="icofont-email"></i></span>
-                                         <p>
-                                            {% with provider_name=account.get_provider.name site_name=site.name %}{% blocktrans %}You are about to use your {{provider_name}} account to login to
-                                            {{site_name}}. As a final step, please complete the following form:{% endblocktrans %}
-                                         </p>
+                                    <p>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}
+                                        Please complete the following form to link your {{provider_name}} account to a new {{site_name}} account:{% endblocktrans %}</p>
+                                        {% if form.errors %}
+                                            <ul class="errorlist">
+                                                <li>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}
+                                                NOTE: If you already have a {{site_name}} account and want to link your {{provider_name}} account please click {% endblocktrans %}
+                                                <a href="{% url 'socialaccount_connections' %}">{% trans " Here" %}</a> to log in first.</li>
+                                            </ul>
+                                        {% endif %}
+                                        
                                 </form>
                                       <form class="signup" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}">
                                           {% csrf_token %}

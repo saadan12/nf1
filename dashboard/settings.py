@@ -31,10 +31,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'v589_%ir&upblwhrusem7c*(jhpf+y@gd(k+(j78f$+#3ke50h'
 
+ 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG=True
-ALLOWED_HOSTS = ['192.168.10.82', 'nftion-test.herokuapp.com','192.168.10.183', '192.168.0.105', '192.168.0.103', '127.0.0.1', 'localhost', 'glimcy-test.herokuapp.com',
-                 'nftion-test2.herokuapp.com', 'glimcy.herokuapp.com', 'glimcy.com', "192.168.10.29", "192.168.10.255"]
+ALLOWED_HOSTS = ['nftion-test2.herokuapp.com','127.0.0.1', '127.0.0.1:8000', "localhost"]
 
 # Application definition
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -269,6 +269,10 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -363,7 +367,7 @@ else:
 # =============== Redirects ===============
 LOGOUT_REDIRECT_URL = 'account_login'
 LOGIN_URL = "account_login"
-LOGIN_REDIRECT_URL = 'pre_login_check'
+LOGIN_REDIRECT_URL = '/'
 
 
 # =============== Custom allauth settings ===============
@@ -428,3 +432,5 @@ STRIPE_SECRET_KEY = "sk_test_51Hkp4ZJDNjt0xwAjpoDiZd1M18TPPovP3ecLcZFmOMOeLtlHsO
 # DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
 # DROPBOX_OAUTH2_TOKEN = "A5nUCB4RrlwAAAAAAAAAASnX01n9CiopgtaNbAq78ZnRj1oV_ntXpx3FqSfz8RAF"
 # DROPBOX_WRITE_MODE = 'overwrite'
+
+
