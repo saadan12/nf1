@@ -32,61 +32,13 @@ class MyLoginAccountAdapter(DefaultAccountAdapter):
 
 
 class MySocialAccountAdapter(DefaultSocialAccountAdapter):
-    """
-    Overrides allauth.socialaccount.adapter.DefaultSocialAccountAdapter.pre_social_login to
-    perform some actions right after successful login
-    """
-
-    @method_decorator(persist_session_vars(['ref_user_id']))
-    def pre_social_login(self, request, sociallogin):
-        print('user', sociallogin.user)
-        # sociallogin.leave()
-        # pass
-        # if ref_user_id:
-        #     request.session['ref_user_id'] = ref_user_id
-        #     request.session['referred_email'] = sociallogin.user
-
-
-@receiver(pre_social_login)
-def link_to_local_user(sender, request, sociallogin, **kwargs):
-    """ Login and redirect
-    This is done in order to tackle the situation where user's email retrieved
-    from one provider is different from already existing email in the database
-    (e.g facebook and google both use same email-id). Specifically, this is done to
-    tackle following issues:
-    * https://github.com/pennersr/django-allauth/issues/215
-
-    """
-    ref_user_id = request.session.get('ref_user_id')
-    ref_user = User.objects.get(id=ref_user_id)
-    try:
-        print('2', request.user)
-        print('2', sociallogin.user)
-    except:
-        pass
-    # email = str(sociallogin.account)
-    # print('social account', sociallogin.email_addresses)
-    # referred_user = User.objects.filter(email=email).first()
-    # recomended_by = referred_user.recommended_by
-    # if not recomended_by:
-    #     referred_user.recommended_by = ref_user
-    #     ref_user.days_remaining += 3
-    #     ref_user.save()
-    #     referred_user.save()
-    try:
-        pass
-        # print('session variable', request.session.get('ref_user_id'))
-        # print('user', request.user)
-        # ref_user_id = request.session.get('ref_user_id')
-        # if ref_user_id:
-        #     request.session['ref_user_id'] = ref_user_id
-        #     request.session['referred_email'] = sociallogin.user
-        # email_address = sociallogin.account.extra_data['elements'][0]['handle~']['emailAddress']
-        # code = request.GET.get('code', None)
-        # code2 = request.GET.get('AUTH2_AUTHORIZATION_CODE', None)
-        # if user:
-        #     sociallogin.connect(request, user)
-        #     res = ImmediateHttpResponse(redirect(settings.LOGIN_REDIRECT_URL.format(id=request.user.id)))
-        #     raise res
-    except Exception as error:
-        return HttpResponse(str(error))
+    def pre_social_login(self, request, sociallogin): 
+        user = sociallogin.user
+        if user.id:  
+            return          
+        try:
+            customer = User.objects.get(email=user.email)  # if user exists, connect the account to the existing account and login
+            sociallogin.state['process'] = 'connect'                
+            perform_login(request, customer, 'none')
+        except User.DoesNotExist:
+            pass

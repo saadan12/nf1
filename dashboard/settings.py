@@ -396,7 +396,7 @@ SOCIALACCOUNT_AUTO_SIGNUP = True
 # Activate Django-Heroku.
 # django_heroku.settings(locals())
 
-# SOCIALACCOUNT_ADAPTER = 'dashboard.adapter.MySocialAccountAdapter'
+SOCIALACCOUNT_ADAPTER = "dashboard.adapter.MySocialAccountAdapter" 
 # ACCOUNT_SESSION_REMEMBER = True
 
 
