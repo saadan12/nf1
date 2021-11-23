@@ -685,7 +685,7 @@ def create_login_session(request):
 
     # ip = '103.255.6.250'
     key_ip_stack = 'ff45da09c258af9a24613df6a97af897'
-    url = f"http://api.ipstack.com/46.199.192.135?access_key={key_ip_stack}"
+    url = f"https://api.ipstack.com/46.199.192.135?access_key={key_ip_stack}"
     response = requests.get(url)
     response.raise_for_status()
     r = response.json()
