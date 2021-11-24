@@ -349,21 +349,28 @@ SITE_ID = 1
 
 # =============== Email Settings ===============
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-# EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'msaadanwaqar@gmail.com'
+EMAIL_HOST_PASSWORD= 'Rajwara12-12'
 
-deploy=False
-if deploy:
-    EMAIL_HOST = 'smtppro.zoho.eu'
-    EMAIL_HOST_USER = 'infiniqus2021@gmail.com'
-    EMAIL_HOST_PASSWORD = 'Ramzan1996@'
-    DEFAULT_FROM_EMAIL = 'help@nfticon.io'
-else:
-    EMAIL_HOST = "smtp.zoho.com"
-    EMAIL_HOST_USER = "help@nfticon.io"
-    EMAIL_HOST_PASSWORD = "Ramzan1996@"
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# # EMAIL_USE_SSL = False
+
+# deploy=False
+# if deploy:
+#     EMAIL_HOST = 'smtppro.zoho.eu'
+#     EMAIL_HOST_USER = 'infiniqus2021@gmail.com'
+#     EMAIL_HOST_PASSWORD = 'Ramzan1996@'
+#     DEFAULT_FROM_EMAIL = 'help@nfticon.io'
+# else:
+#     EMAIL_HOST = "smtp.zoho.com"
+#     EMAIL_HOST_USER = "help@nfticon.io"
+#     EMAIL_HOST_PASSWORD = "Ramzan1996@"
 
 # =============== Redirects ===============
 LOGOUT_REDIRECT_URL = 'account_login'
