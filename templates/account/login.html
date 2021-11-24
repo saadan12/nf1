@@ -54,7 +54,7 @@
 								</a>
 								{% if request.method == "POST" %}
 								<span id="error-signin">
-									 <p>Invalid Email or Password</p>
+									 <p style="color: red;">Invalid Email or Password</p>
 								</span>
 								{% endif %}
 								<div class="sign__group">
@@ -89,7 +89,7 @@
 
 								<span class="sign__text">Don't have an account? <a href="{% url 'account_signup' %}">Sign up!</a></span>
 
-								<span class="sign__text"><a href="{% url 'home:reset' %}">Forgot password?</a></span>
+								<span class="sign__text"><a href="{% url 'account_reset_password' %}">Forgot password?</a></span>
 							</form>
 							<!-- end authorization form -->
 						</div>
