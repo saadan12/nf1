@@ -357,6 +357,7 @@ EMAIL_HOST_USER = 'msaadanwaqar@gmail.com'
 EMAIL_HOST_PASSWORD= 'Rajwara12-12'
 
  
+
 # =============== Redirects ===============
 LOGOUT_REDIRECT_URL = 'account_login'
 LOGIN_URL = "account_login"
@@ -421,8 +422,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 # CACHE_BACKEND = 'http://localhost:8000/'
 # CACHE_BACKEND = 'locmem:///'
 
-STRIPE_PUBLIC_KEY = "pk_test_51Hkp4ZJDNjt0xwAjNfOiET06tUPxhPuMy6RU8PDX2q7RfdIk99yAX58stcpKjUOh2CZrce2CnJyV3raJ8Bm6fwwn004Dghtkq4"
-STRIPE_SECRET_KEY = "sk_test_51Hkp4ZJDNjt0xwAjpoDiZd1M18TPPovP3ecLcZFmOMOeLtlHsOvyz4DdUpiKVfbEoCVvlUeQSG96bfW0GzqummQa0000fnoRpC"
+STRIPE_PUBLIC_KEY = 'pk_test_51JI5aeJvvDg4KDbE9PbDASKMMjeaUVMRQtlRLoXp7hd7mbZRqonyizwDtTfA3GM354zDXzIi7ZkBcBK5kknVWEdi00ObCxxzsQ'
+STRIPE_SECRET_KEY = 'sk_test_51JI5aeJvvDg4KDbEfJTagjaZAmZCP8URfE1jnwM9klQHMvFBYfDIaT3ZGYoYlJuAmDNACRPV22BmxnFvq9K0mHDy00NLcJM9LI' 
+STRIPE_WEBHOOK_SECRET = ""
+
 
 # DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
 # DROPBOX_OAUTH2_TOKEN = "A5nUCB4RrlwAAAAAAAAAASnX01n9CiopgtaNbAq78ZnRj1oV_ntXpx3FqSfz8RAF"
