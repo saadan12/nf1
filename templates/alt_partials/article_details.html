@@ -61,8 +61,10 @@
 						<!-- end share -->
 
 						<!-- likes -->
+			  
             <form action="{% url 'home:like_post' post.asset_slug %}" method="POST">
               {% csrf_token %}
+			 
               {% if liked %}
                 <button class="asset__likes" type="submit" name="post_id" value="{{ post.asset_slug }}">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.16,5A6.29,6.29,0,0,0,12,4.36a6.27,6.27,0,0,0-8.16,9.48l6.21,6.22a2.78,2.78,0,0,0,3.9,0l6.21-6.22A6.27,6.27,0,0,0,20.16,5Zm-1.41,7.46-6.21,6.21a.76.76,0,0,1-1.08,0L5.25,12.43a4.29,4.29,0,0,1,0-6,4.27,4.27,0,0,1,6,0,1,1,0,0,0,1.42,0,4.27,4.27,0,0,1,6,0A4.29,4.29,0,0,1,18.75,12.43Z"></path>!</svg>
@@ -74,7 +76,10 @@
                   <span>{{ total_likes }}</span>
                 </button>
               {% endif %}
+			  
+
             </form>
+		 
 
 
 						<!-- end likes -->
@@ -153,9 +158,23 @@
 
 						<!-- actions -->
 						<div class="asset__btns">
-							<!-- <button class="btn-hover color-4"><a href="{% url 'home:home' %}" style="color:#fff;">Buy - ${{post.asset_price}}</a></button> -->
-							<button class="asset__btn asset__btn--clr btn-hover-general color-4" style="color:#fff;" type="button">Buy - ${{post.asset_price}}</button>
+							<form action="{% url 'create-checkout-session' post.id %}" method="POST">
+                                {% csrf_token %}
+							<button type="submit" id="checkout-button" class="btn-hover color-4"> Buy - ${{post.asset_price}} </button>
+							  
+							<!-- <button class="asset__btn asset__btn--clr btn-hover-general color-4" style="color:#fff;" type="button">  -->
+									
+									
+								  </form>
+							 
+	 
+							
+							
+ 
+							
 
+							 
+							
 							<a href="opensea.io" class="asset__btn open-modal">Explore</a>
 						</div>
 						<!-- end actions -->
