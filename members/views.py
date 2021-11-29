@@ -17,7 +17,7 @@ class CreateCheckoutSessionView(View):
     def post(self, request, *args, **kwargs):
         post_id = self.kwargs["pk"]
         post = Post.objects.get(id=post_id)
-        YOUR_DOMAIN = "http://nftion-test2.herokuapp.com"
+        YOUR_DOMAIN = "https://nftion-test2.herokuapp.com"
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=[
